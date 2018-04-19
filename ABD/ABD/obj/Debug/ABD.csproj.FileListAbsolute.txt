@@ -1,0 +1,44 @@
+c:\users\jeny_\documents\visual studio 2015\Projects\ABD\ABD\bin\Debug\ABD.exe.config
+C:\Users\jeny_\documents\visual studio 2015\Projects\ABD\ABD\bin\Debug\ABD.exe
+C:\Users\jeny_\documents\visual studio 2015\Projects\ABD\ABD\bin\Debug\ABD.pdb
+C:\Users\jeny_\documents\visual studio 2015\Projects\ABD\ABD\obj\Debug\ABD.csprojResolveAssemblyReference.cache
+C:\Users\jeny_\documents\visual studio 2015\Projects\ABD\ABD\obj\Debug\ABD.Ventana1.resources
+C:\Users\jeny_\documents\visual studio 2015\Projects\ABD\ABD\obj\Debug\ABD.Properties.Resources.resources
+C:\Users\jeny_\documents\visual studio 2015\Projects\ABD\ABD\obj\Debug\ABD.csproj.GenerateResource.Cache
+C:\Users\jeny_\documents\visual studio 2015\Projects\ABD\ABD\obj\Debug\ABD.exe
+C:\Users\jeny_\documents\visual studio 2015\Projects\ABD\ABD\obj\Debug\ABD.pdb
+C:\Users\jeny_\documents\visual studio 2015\Projects\ABD\ABD\obj\Debug\ABD.Form2.resources
+C:\Users\jeny_\Documents\GitHub\ADB\ABD\ABD\bin\Debug\ABD.exe.config
+C:\Users\jeny_\Documents\GitHub\ADB\ABD\ABD\obj\Debug\ABD.exe
+C:\Users\jeny_\Documents\GitHub\ADB\ABD\ABD\obj\Debug\ABD.pdb
+C:\Users\jeny_\Documents\GitHub\ADB\ABD\ABD\bin\Debug\ABD.exe
+C:\Users\jeny_\Documents\GitHub\ADB\ABD\ABD\bin\Debug\ABD.pdb
+C:\Users\jeny_\Documents\GitHub\ADB\ABD\ABD\obj\Debug\ABD.csprojResolveAssemblyReference.cache
+C:\Users\jeny_\Documents\GitHub\ADB\ABD\ABD\obj\Debug\ABD.Ventana1.resources
+C:\Users\jeny_\Documents\GitHub\ADB\ABD\ABD\obj\Debug\ABD.Form2.resources
+C:\Users\jeny_\Documents\GitHub\ADB\ABD\ABD\obj\Debug\ABD.Properties.Resources.resources
+C:\Users\jeny_\Documents\GitHub\ADB\ABD\ABD\obj\Debug\ABD.csproj.GenerateResource.Cache
+C:\Users\jeny_\Documents\GitHub\ADB\ABD\ABD\obj\Debug\ABD.Form3.resources
+C:\Users\adan_.adan_optiplex\Source\Repos\ADB2\ABD\ABD\bin\Debug\ABD.exe.config
+C:\Users\adan_.adan_optiplex\Source\Repos\ADB2\ABD\ABD\bin\Debug\ABD.exe
+C:\Users\adan_.adan_optiplex\Source\Repos\ADB2\ABD\ABD\bin\Debug\ABD.pdb
+C:\Users\adan_.adan_optiplex\Source\Repos\ADB2\ABD\ABD\obj\Debug\ABD.csprojResolveAssemblyReference.cache
+C:\Users\adan_.adan_optiplex\Source\Repos\ADB2\ABD\ABD\obj\Debug\ABD.Ventana1.resources
+C:\Users\adan_.adan_optiplex\Source\Repos\ADB2\ABD\ABD\obj\Debug\ABD.Form2.resources
+C:\Users\adan_.adan_optiplex\Source\Repos\ADB2\ABD\ABD\obj\Debug\ABD.Form3.resources
+C:\Users\adan_.adan_optiplex\Source\Repos\ADB2\ABD\ABD\obj\Debug\ABD.Properties.Resources.resources
+C:\Users\adan_.adan_optiplex\Source\Repos\ADB2\ABD\ABD\obj\Debug\ABD.csproj.GenerateResource.cache
+C:\Users\adan_.adan_optiplex\Source\Repos\ADB2\ABD\ABD\obj\Debug\ABD.csproj.CoreCompileInputs.cache
+C:\Users\adan_.adan_optiplex\Source\Repos\ADB2\ABD\ABD\obj\Debug\ABD.exe
+C:\Users\adan_.adan_optiplex\Source\Repos\ADB2\ABD\ABD\obj\Debug\ABD.pdb
+F:\ADB2\ABD\ABD\bin\Debug\ABD.exe.config
+F:\ADB2\ABD\ABD\obj\Debug\ABD.exe
+F:\ADB2\ABD\ABD\obj\Debug\ABD.pdb
+F:\ADB2\ABD\ABD\obj\Debug\ABD.csprojResolveAssemblyReference.cache
+F:\ADB2\ABD\ABD\obj\Debug\ABD.Ventana1.resources
+F:\ADB2\ABD\ABD\obj\Debug\ABD.Form2.resources
+F:\ADB2\ABD\ABD\obj\Debug\ABD.Form3.resources
+F:\ADB2\ABD\ABD\obj\Debug\ABD.Properties.Resources.resources
+F:\ADB2\ABD\ABD\obj\Debug\ABD.csproj.GenerateResource.Cache
+F:\ADB2\ABD\ABD\bin\Debug\ABD.exe
+F:\ADB2\ABD\ABD\bin\Debug\ABD.pdb
