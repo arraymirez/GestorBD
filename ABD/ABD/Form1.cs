@@ -26,11 +26,7 @@ namespace ABD
         public TreeView getDir() {
             return directorio;
         }
-
-           
-
-
-
+        
         private void label4_Click(object sender, EventArgs e)
         {
 
@@ -51,6 +47,7 @@ namespace ABD
         private void button2_Click(object sender, EventArgs e)
         {
             Form2 v2 = new Form2();
+            
             this.Hide();
             v2.Usar = true;
             v2.Show();
@@ -67,11 +64,14 @@ namespace ABD
         {
             ListaDirectorio(directorio);
         }
+        //Recibe el treeview al que se desean actualizar los archivos
         public void ListaDirectorio(TreeView dir)
         {
            
             dir.Nodes.Clear();
-            var raiz = new DirectoryInfo(Application.StartupPath);
+            var raiz = new DirectoryInfo(Application.StartupPath + @"\Gestor");
+            string rutaRaiz = Application.StartupPath + @"\Gestor";
+            if (!Directory.Exists(rutaRaiz)) { Directory.CreateDirectory(rutaRaiz); }
             dir.Nodes.Add(ActualizarRaiz(raiz));
 
         }

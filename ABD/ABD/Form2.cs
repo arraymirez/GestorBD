@@ -20,10 +20,12 @@ namespace ABD
         }
         Regex nombreBDValidacion =  new Regex("^([a-zA-Z]+)([a-zA-Z]|([0-9]))*$");
         public string nombreDB;
+       
         /*VARIABLES*/
         private bool crear;
         private bool usar;
         private bool borrar;
+        private bool crearTabla;
         /*GETTERS AND SETTERS*/
         public bool Crear
         {
@@ -64,8 +66,7 @@ namespace ABD
             }
         }
 
-        
-
+        public bool CrearTabla { get => crearTabla; set => crearTabla = value; }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
@@ -75,7 +76,7 @@ namespace ABD
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Ventana1 v=new Ventana1();
+            Ventana1 v = new Ventana1();
             nombreDB = nombrebd.Text;
             if (Crear)
             {
@@ -83,6 +84,7 @@ namespace ABD
                 if (nombreBDValidacion.IsMatch(nombreDB))
                 {
                     dir.CrearDir(nombreDB);
+                    v.ListaDirectorio(v.getDir());
                     nombrebd.Text = "";
                 }
                 else
@@ -92,15 +94,21 @@ namespace ABD
                 Crear = false;
                 v.ListaDirectorio(v.getDir());
             }
-            
-            if(Usar)
+
+            if (Usar)
             {
                 Form3 v3 = new Form3();
+                v3.BaseEnUso = nombrebd.Text;
                 v3.Show();
                 Usar = false;
-             v.ListaDirectorio(v.getDir());
+                v.ListaDirectorio(v.getDir());
             }
+            if (CrearTabla) {
+                Form3 v3 = new Form3();
+                v3.CreaTabla(nombrebd.Text + ".str");
+                v3.CreaTabla(nombrebd.Text + ".data");
 
+            }
             this.Hide();
 
         }
@@ -111,7 +119,7 @@ namespace ABD
 
             public void CrearDir(string nom)
             {
-                string carpeta = Application.StartupPath + @"\" + nom;
+                string carpeta = Application.StartupPath + @"\Gestor\" + nom;
                 Ventana1  v = new Ventana1(); 
                 try
                 {
@@ -132,8 +140,9 @@ namespace ABD
                 }
 
               
-            }          
-            
+            }
+
+
 
 
         }
