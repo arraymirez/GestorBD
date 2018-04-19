@@ -17,18 +17,48 @@ namespace ABD
         public Form3()
         {
             InitializeComponent();
-           
+            
+        }
+        public string getBd()
+        {
+            return bdusetxt.Text;
+
         }
         private string baseEnUso;
+        private string _superBase;
 
-        public string BaseEnUso { get => baseEnUso; set => baseEnUso = value; }
+        public string BaseEnUso
+        {
+            get
+            {
+                return baseEnUso;
+            }
+
+            set
+            {
+                baseEnUso = value;
+            }
+        }
+
+        public string SuperBase
+        {
+            get
+            {
+                return _superBase;
+            }
+
+            set
+            {
+                _superBase = value;
+            }
+        }
 
         private void Form3_Load(object sender, EventArgs e)
         {
           
             Ventana1 v = new Ventana1();
 
-            bdusetxt.Text = baseEnUso;
+            bdusetxt.Text = BaseEnUso;
             v.ListaDirectorio(dirUso);
         }
 
@@ -41,34 +71,12 @@ namespace ABD
         {
             Form2 f2 = new Form2();
             f2.Show();
+            f2.usandoBD = getBd();
             f2.CrearTabla = true;
 
         }
 
 
-        public void CreaTabla(string archivo)
-        {
-            string tabla = Application.StartupPath + @"\Gestor\" + bdusetxt.Text + "\\" + archivo;
-            
-            try
-            {
-                if (File.Exists(tabla))
-                {
-                    MessageBox.Show("La tabla ya existe.");
-                }
-                else
-                {
-                    File.CreateText(tabla);
-                    MessageBox.Show("Tabla creada");
-                  
-                }
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show(e.Message);
-            }
-
-
-        }
+        
     }
 }
