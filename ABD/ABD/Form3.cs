@@ -85,17 +85,7 @@ namespace ABD
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            Point coordtxt = textBox1.Location;
-            Point coordlabel = lcampo.Location;
-
-            Label campo = new Label();
-            TextBox txtcampo = new TextBox();
-
-            campo.Location = new Point(coordlabel.X,coordlabel.Y+=18);
-            txtcampo.Location = new Point(coordtxt.X,coordtxt.Y+=18);
-
-            PanelCrearTablas.Controls.Add(campo);
-            PanelCrearTablas.Controls.Add(txtcampo);
+            
 
         }
         
