@@ -13,12 +13,16 @@ namespace ABD
 {
     public partial class Form3 : Form
     {
-      
+       
+
+
         public Form3()
         {
             InitializeComponent();
             
         }
+
+       
         public string getBd()
         {
             return bdusetxt.Text;
@@ -53,6 +57,8 @@ namespace ABD
             }
         }
 
+     
+
         private void Form3_Load(object sender, EventArgs e)
         {
           
@@ -69,14 +75,22 @@ namespace ABD
 
         private void CrearTabla(object sender, EventArgs e)
         {
-            Form2 f2 = new Form2();
-            f2.Show();
-            f2.usandoBD = getBd();
-            f2.CrearTabla = true;
+            PanelCrearTablas.Visible = true;
+            //Form2 f2 = new Form2();
+            //f2.Show();
+            //f2.usandoBD = getBd();
+            //f2.CrearTabla = true;
 
         }
 
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            
 
+        }
         
+       
+
+       
     }
 }
