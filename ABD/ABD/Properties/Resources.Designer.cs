@@ -133,6 +133,16 @@ namespace ABD.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Entypo_2796_0__241 {
+            get {
+                object obj = ResourceManager.GetObject("Entypo_2796(0)_241", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Entypo_d83d_1__32 {
             get {
                 object obj = ResourceManager.GetObject("Entypo_d83d(1)_32", resourceCulture);
@@ -146,6 +156,16 @@ namespace ABD.Properties {
         internal static System.Drawing.Bitmap Entypo_d83d_1__64 {
             get {
                 object obj = ResourceManager.GetObject("Entypo_d83d(1)_64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Entypo_e741_0__32 {
+            get {
+                object obj = ResourceManager.GetObject("Entypo_e741(0)_32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -28,40 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nombrebd = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtnombrebd = new System.Windows.Forms.TextBox();
+            this.labelNomDB = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.pictureDBFondo = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDBFondo)).BeginInit();
             this.SuspendLayout();
             // 
-            // nombrebd
+            // txtnombrebd
             // 
-            this.nombrebd.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.nombrebd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.nombrebd.Location = new System.Drawing.Point(134, 75);
-            this.nombrebd.MaxLength = 50;
-            this.nombrebd.Name = "nombrebd";
-            this.nombrebd.Size = new System.Drawing.Size(184, 19);
-            this.nombrebd.TabIndex = 0;
-            this.nombrebd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtnombrebd.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtnombrebd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txtnombrebd.Location = new System.Drawing.Point(134, 75);
+            this.txtnombrebd.MaxLength = 50;
+            this.txtnombrebd.Name = "txtnombrebd";
+            this.txtnombrebd.Size = new System.Drawing.Size(184, 19);
+            this.txtnombrebd.TabIndex = 0;
+            this.txtnombrebd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label1
+            // labelNomDB
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Trajan Pro", 16F);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(65, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(357, 28);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nombre de la base de datos";
+            this.labelNomDB.AutoSize = true;
+            this.labelNomDB.Font = new System.Drawing.Font("Trajan Pro", 16F);
+            this.labelNomDB.ForeColor = System.Drawing.Color.White;
+            this.labelNomDB.Location = new System.Drawing.Point(65, 35);
+            this.labelNomDB.Name = "labelNomDB";
+            this.labelNomDB.Size = new System.Drawing.Size(357, 28);
+            this.labelNomDB.TabIndex = 1;
+            this.labelNomDB.Text = "Nombre de la base de datos";
             // 
             // panel2
             // 
@@ -73,19 +73,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(467, 23);
             this.panel2.TabIndex = 8;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(150)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(150)))));
-            this.button1.Image = global::ABD.Properties.Resources.FontAwesome_f00c_0__48;
-            this.button1.Location = new System.Drawing.Point(176, 248);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 48);
-            this.button1.TabIndex = 9;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox3
             // 
@@ -108,15 +95,28 @@
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox1
+            // btnAceptar
             // 
-            this.pictureBox1.Image = global::ABD.Properties.Resources.databases_2;
-            this.pictureBox1.Location = new System.Drawing.Point(102, 75);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(256, 167);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(150)))));
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(150)))));
+            this.btnAceptar.Image = global::ABD.Properties.Resources.FontAwesome_f00c_0__48;
+            this.btnAceptar.Location = new System.Drawing.Point(176, 248);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(115, 48);
+            this.btnAceptar.TabIndex = 9;
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // pictureDBFondo
+            // 
+            this.pictureDBFondo.Image = global::ABD.Properties.Resources.databases_2;
+            this.pictureDBFondo.Location = new System.Drawing.Point(102, 75);
+            this.pictureDBFondo.Name = "pictureDBFondo";
+            this.pictureDBFondo.Size = new System.Drawing.Size(256, 167);
+            this.pictureDBFondo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureDBFondo.TabIndex = 2;
+            this.pictureDBFondo.TabStop = false;
             // 
             // Form2
             // 
@@ -124,20 +124,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(467, 299);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.nombrebd);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.labelNomDB);
+            this.Controls.Add(this.txtnombrebd);
+            this.Controls.Add(this.pictureDBFondo);
             this.ForeColor = System.Drawing.Color.Transparent;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "BaseDeDatos";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureDBFondo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,12 +146,12 @@
 
         #endregion
 
-        public System.Windows.Forms.TextBox nombrebd;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.TextBox txtnombrebd;
+        private System.Windows.Forms.Label labelNomDB;
+        private System.Windows.Forms.PictureBox pictureDBFondo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAceptar;
     }
 }
