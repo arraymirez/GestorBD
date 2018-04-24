@@ -18,14 +18,18 @@ namespace ABD
         {
             InitializeComponent();
         }
-        Regex nombreBDValidacion =  new Regex("^([a-zA-Z]+)([a-zA-Z]|([0-9]))*$");
+
+       public Regex nombreValidacion =  new Regex("^([a-zA-Z]+)([a-zA-Z]|([0-9]))*$");
         public string nombreDB;
         public string usandoBD;
+
         /*VARIABLES*/
         private bool crear;
         private bool usar;
         private bool borrar;
         private bool crearTabla;
+
+
         /*GETTERS AND SETTERS*/
         public bool Crear
         {
@@ -88,15 +92,15 @@ namespace ABD
         private void button1_Click(object sender, EventArgs e)
         {
             Ventana1 v = new Ventana1();
-            nombreDB = nombrebd.Text;
+            nombreDB = txtnombrebd.Text;
             if (Crear)
             {
                 Directorios dir = new Directorios();
-                if (nombreBDValidacion.IsMatch(nombreDB))
+                if (nombreValidacion.IsMatch(nombreDB))
                 {
                     dir.CrearDir(nombreDB);
                     v.ListaDirectorio(v.getDir());
-                    nombrebd.Text = "";
+                    txtnombrebd.Text = "";
                 }
                 else
                 {
@@ -109,7 +113,7 @@ namespace ABD
             if (Usar)
             {
                 Form3 v3 = new Form3();
-                v3.BaseEnUso = nombrebd.Text;
+                v3.BaseEnUso = txtnombrebd.Text;
                 v3.Show();
                 Usar = false;
                 v.ListaDirectorio(v.getDir());
@@ -117,15 +121,16 @@ namespace ABD
             if (CrearTabla) {
             
                 Directorios dir = new Directorios();
-                   dir.CreaTabla(nombrebd.Text + ".str",usandoBD);
-                dir.CreaTabla(nombrebd.Text + ".data",usandoBD);
+                   dir.CreaTabla(txtnombrebd.Text + ".str",usandoBD);
+                dir.CreaTabla(txtnombrebd.Text + ".data",usandoBD);
 
             }
             this.Hide();
 
         }
- 
-        }
+
+      
+    }
     class Directorios
     {
 

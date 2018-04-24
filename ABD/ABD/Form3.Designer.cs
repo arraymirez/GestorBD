@@ -31,38 +31,43 @@
             System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("bd1");
             this.dirUso = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bdusetxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.panelOpTablas = new System.Windows.Forms.Panel();
+            this.pictureBorrar = new System.Windows.Forms.PictureBox();
+            this.pictureAñadir = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.PanelCrearTablas = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lcampo = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnUsarTabla = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnEliminarTabla = new System.Windows.Forms.Button();
             this.btnCrearTabla = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.CBTiposDatos = new System.Windows.Forms.ComboBox();
+            this.PanelCrearTablas = new System.Windows.Forms.Panel();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.labelTamaño = new System.Windows.Forms.Label();
+            this.labelTipoDato = new System.Windows.Forms.Label();
+            this.btnGuardarTabla = new System.Windows.Forms.Button();
+            this.labelCampo = new System.Windows.Forms.Label();
+            this.txtNumCampos = new System.Windows.Forms.TextBox();
+            this.labelNumCampos = new System.Windows.Forms.Label();
+            this.labelTabla = new System.Windows.Forms.Label();
+            this.txtNomTabla = new System.Windows.Forms.TextBox();
+            this.panelNomTab = new System.Windows.Forms.Panel();
+            this.btnEliminar = new System.Windows.Forms.PictureBox();
+            this.btnAgregarCampos = new System.Windows.Forms.PictureBox();
+            this.pictureBD = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.PanelCrearTablas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelOpTablas.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBorrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAñadir)).BeginInit();
+            this.PanelCrearTablas.SuspendLayout();
+            this.panelNomTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregarCampos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBD)).BeginInit();
             this.SuspendLayout();
             // 
             // dirUso
@@ -74,7 +79,7 @@
             treeNode2.Text = "bd1";
             this.dirUso.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode2});
-            this.dirUso.Size = new System.Drawing.Size(123, 439);
+            this.dirUso.Size = new System.Drawing.Size(123, 476);
             this.dirUso.TabIndex = 9;
             // 
             // panel2
@@ -86,6 +91,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(733, 23);
             this.panel2.TabIndex = 10;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Image = global::ABD.Properties.Resources.Entypo_2715_0__24;
+            this.pictureBox1.Location = new System.Drawing.Point(709, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 23);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.CerrarVentana);
             // 
             // label1
             // 
@@ -120,32 +137,43 @@
             this.label2.TabIndex = 15;
             this.label2.Text = "Crear nueva tabla";
             // 
-            // panel1
+            // panelOpTablas
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(100)))));
-            this.panel1.Controls.Add(this.pictureBox4);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.btnCrearTabla);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(124, 126);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(608, 115);
-            this.panel1.TabIndex = 16;
+            this.panelOpTablas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(100)))));
+            this.panelOpTablas.Controls.Add(this.pictureBorrar);
+            this.panelOpTablas.Controls.Add(this.pictureAñadir);
+            this.panelOpTablas.Controls.Add(this.label4);
+            this.panelOpTablas.Controls.Add(this.btnUsarTabla);
+            this.panelOpTablas.Controls.Add(this.label3);
+            this.panelOpTablas.Controls.Add(this.btnEliminarTabla);
+            this.panelOpTablas.Controls.Add(this.btnCrearTabla);
+            this.panelOpTablas.Controls.Add(this.label2);
+            this.panelOpTablas.Location = new System.Drawing.Point(124, 126);
+            this.panelOpTablas.Name = "panelOpTablas";
+            this.panelOpTablas.Size = new System.Drawing.Size(608, 115);
+            this.panelOpTablas.TabIndex = 16;
             // 
-            // label3
+            // pictureBorrar
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(211, 87);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 17);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Eliminar Tabla";
+            this.pictureBorrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
+            this.pictureBorrar.Image = global::ABD.Properties.Resources.Entypo_2796_0__24;
+            this.pictureBorrar.Location = new System.Drawing.Point(276, 60);
+            this.pictureBorrar.Name = "pictureBorrar";
+            this.pictureBorrar.Size = new System.Drawing.Size(24, 24);
+            this.pictureBorrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBorrar.TabIndex = 19;
+            this.pictureBorrar.TabStop = false;
+            // 
+            // pictureAñadir
+            // 
+            this.pictureAñadir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
+            this.pictureAñadir.Image = global::ABD.Properties.Resources.Entypo_2795_1__24;
+            this.pictureAñadir.Location = new System.Drawing.Point(120, 60);
+            this.pictureAñadir.Name = "pictureAñadir";
+            this.pictureAñadir.Size = new System.Drawing.Size(24, 24);
+            this.pictureAñadir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureAñadir.TabIndex = 18;
+            this.pictureAñadir.TabStop = false;
             // 
             // label4
             // 
@@ -158,144 +186,45 @@
             this.label4.TabIndex = 18;
             this.label4.Text = "Usar Tabla";
             // 
-            // PanelCrearTablas
+            // btnUsarTabla
             // 
-            this.PanelCrearTablas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.PanelCrearTablas.Controls.Add(this.label7);
-            this.PanelCrearTablas.Controls.Add(this.textBox3);
-            this.PanelCrearTablas.Controls.Add(this.label5);
-            this.PanelCrearTablas.Controls.Add(this.CBTiposDatos);
-            this.PanelCrearTablas.Controls.Add(this.button3);
-            this.PanelCrearTablas.Controls.Add(this.label6);
-            this.PanelCrearTablas.Controls.Add(this.textBox2);
-            this.PanelCrearTablas.Controls.Add(this.pictureBox5);
-            this.PanelCrearTablas.Controls.Add(this.lcampo);
-            this.PanelCrearTablas.Controls.Add(this.textBox1);
-            this.PanelCrearTablas.Location = new System.Drawing.Point(124, 240);
-            this.PanelCrearTablas.Name = "PanelCrearTablas";
-            this.PanelCrearTablas.Size = new System.Drawing.Size(608, 221);
-            this.PanelCrearTablas.TabIndex = 18;
-            this.PanelCrearTablas.Visible = false;
+            this.btnUsarTabla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
+            this.btnUsarTabla.BackgroundImage = global::ABD.Properties.Resources.Entypo_d83d_1__64;
+            this.btnUsarTabla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnUsarTabla.FlatAppearance.BorderSize = 0;
+            this.btnUsarTabla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsarTabla.ForeColor = System.Drawing.Color.White;
+            this.btnUsarTabla.Location = new System.Drawing.Point(351, 22);
+            this.btnUsarTabla.Name = "btnUsarTabla";
+            this.btnUsarTabla.Size = new System.Drawing.Size(86, 62);
+            this.btnUsarTabla.TabIndex = 17;
+            this.btnUsarTabla.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // label3
             // 
-            this.textBox1.Location = new System.Drawing.Point(26, 82);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(211, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 17);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Eliminar Tabla";
             // 
-            // lcampo
+            // btnEliminarTabla
             // 
-            this.lcampo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lcampo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lcampo.Location = new System.Drawing.Point(26, 60);
-            this.lcampo.Name = "lcampo";
-            this.lcampo.Size = new System.Drawing.Size(100, 20);
-            this.lcampo.TabIndex = 1;
-            this.lcampo.Text = "campo";
-            // 
-            // label6
-            // 
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(26, 14);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 20);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "Tabla";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(75, 14);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 20;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            this.button3.BackgroundImage = global::ABD.Properties.Resources.icons8_agregar_propiedad_64;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(458, 82);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(86, 62);
-            this.button3.TabIndex = 22;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = global::ABD.Properties.Resources.Entypo_2795_0__24;
-            this.pictureBox5.Location = new System.Drawing.Point(329, 82);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox5.TabIndex = 19;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::ABD.Properties.Resources.Entypo_e754_0__64;
-            this.pictureBox2.Location = new System.Drawing.Point(534, 46);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(64, 64);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 17;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
-            this.pictureBox4.Image = global::ABD.Properties.Resources.Entypo_2796_0__24;
-            this.pictureBox4.Location = new System.Drawing.Point(276, 60);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox4.TabIndex = 19;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
-            this.pictureBox3.Image = global::ABD.Properties.Resources.Entypo_2795_1__24;
-            this.pictureBox3.Location = new System.Drawing.Point(120, 60);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(24, 24);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 18;
-            this.pictureBox3.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
-            this.button2.BackgroundImage = global::ABD.Properties.Resources.Entypo_d83d_1__64;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(351, 22);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 62);
-            this.button2.TabIndex = 17;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
-            this.button1.BackgroundImage = global::ABD.Properties.Resources.Entypo_d83d_1__64;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(214, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 62);
-            this.button1.TabIndex = 15;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnEliminarTabla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
+            this.btnEliminarTabla.BackgroundImage = global::ABD.Properties.Resources.Entypo_d83d_1__64;
+            this.btnEliminarTabla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnEliminarTabla.FlatAppearance.BorderSize = 0;
+            this.btnEliminarTabla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarTabla.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarTabla.Location = new System.Drawing.Point(214, 22);
+            this.btnEliminarTabla.Name = "btnEliminarTabla";
+            this.btnEliminarTabla.Size = new System.Drawing.Size(86, 62);
+            this.btnEliminarTabla.TabIndex = 15;
+            this.btnEliminarTabla.UseVisualStyleBackColor = false;
+            this.btnEliminarTabla.Click += new System.EventHandler(this.EliminarTabla);
             // 
             // btnCrearTabla
             // 
@@ -312,85 +241,201 @@
             this.btnCrearTabla.UseVisualStyleBackColor = false;
             this.btnCrearTabla.Click += new System.EventHandler(this.CrearTabla);
             // 
-            // pictureBox1
+            // PanelCrearTablas
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = global::ABD.Properties.Resources.Entypo_2715_0__24;
-            this.pictureBox1.Location = new System.Drawing.Point(709, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 23);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.CerrarVentana);
+            this.PanelCrearTablas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.PanelCrearTablas.Controls.Add(this.vScrollBar1);
+            this.PanelCrearTablas.Controls.Add(this.label5);
+            this.PanelCrearTablas.Controls.Add(this.labelTamaño);
+            this.PanelCrearTablas.Controls.Add(this.labelTipoDato);
+            this.PanelCrearTablas.Controls.Add(this.btnGuardarTabla);
+            this.PanelCrearTablas.Controls.Add(this.labelCampo);
+            this.PanelCrearTablas.Location = new System.Drawing.Point(124, 282);
+            this.PanelCrearTablas.Name = "PanelCrearTablas";
+            this.PanelCrearTablas.Size = new System.Drawing.Size(608, 216);
+            this.PanelCrearTablas.TabIndex = 18;
+            this.PanelCrearTablas.Visible = false;
             // 
-            // CBTiposDatos
+            // vScrollBar1
             // 
-            this.CBTiposDatos.FormattingEnabled = true;
-            this.CBTiposDatos.Items.AddRange(new object[] {
-            "texto",
-            "entero",
-            "decimal"});
-            this.CBTiposDatos.Location = new System.Drawing.Point(142, 82);
-            this.CBTiposDatos.Name = "CBTiposDatos";
-            this.CBTiposDatos.Size = new System.Drawing.Size(88, 21);
-            this.CBTiposDatos.TabIndex = 23;
+            this.vScrollBar1.Location = new System.Drawing.Point(585, 10);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(23, 206);
+            this.vScrollBar1.TabIndex = 28;
             // 
             // label5
             // 
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(142, 58);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.ForeColor = System.Drawing.Color.Gray;
+            this.label5.Location = new System.Drawing.Point(460, 144);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 20);
-            this.label5.TabIndex = 24;
-            this.label5.Text = "Tipo de Dato";
+            this.label5.Size = new System.Drawing.Size(68, 20);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Guardar";
             // 
-            // label7
+            // labelTamaño
             // 
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(245, 60);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 20);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "Tamaño";
+            this.labelTamaño.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelTamaño.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTamaño.Location = new System.Drawing.Point(245, 25);
+            this.labelTamaño.Name = "labelTamaño";
+            this.labelTamaño.Size = new System.Drawing.Size(64, 20);
+            this.labelTamaño.TabIndex = 26;
+            this.labelTamaño.Text = "Tamaño";
             // 
-            // textBox3
+            // labelTipoDato
             // 
-            this.textBox3.Location = new System.Drawing.Point(245, 83);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(64, 20);
-            this.textBox3.TabIndex = 25;
+            this.labelTipoDato.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelTipoDato.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTipoDato.Location = new System.Drawing.Point(140, 25);
+            this.labelTipoDato.Name = "labelTipoDato";
+            this.labelTipoDato.Size = new System.Drawing.Size(88, 20);
+            this.labelTipoDato.TabIndex = 24;
+            this.labelTipoDato.Text = "Tipo de Dato";
+            // 
+            // btnGuardarTabla
+            // 
+            this.btnGuardarTabla.BackColor = System.Drawing.Color.Transparent;
+            this.btnGuardarTabla.BackgroundImage = global::ABD.Properties.Resources.icons8_agregar_propiedad_64;
+            this.btnGuardarTabla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnGuardarTabla.FlatAppearance.BorderSize = 0;
+            this.btnGuardarTabla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarTabla.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarTabla.Location = new System.Drawing.Point(451, 70);
+            this.btnGuardarTabla.Name = "btnGuardarTabla";
+            this.btnGuardarTabla.Size = new System.Drawing.Size(86, 62);
+            this.btnGuardarTabla.TabIndex = 22;
+            this.btnGuardarTabla.UseVisualStyleBackColor = false;
+            this.btnGuardarTabla.Click += new System.EventHandler(this.btnGuardarTabla_Click);
+            // 
+            // labelCampo
+            // 
+            this.labelCampo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelCampo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCampo.Location = new System.Drawing.Point(25, 25);
+            this.labelCampo.Name = "labelCampo";
+            this.labelCampo.Size = new System.Drawing.Size(100, 20);
+            this.labelCampo.TabIndex = 1;
+            this.labelCampo.Text = "campo";
+            // 
+            // txtNumCampos
+            // 
+            this.txtNumCampos.Location = new System.Drawing.Point(274, 16);
+            this.txtNumCampos.MaxLength = 50;
+            this.txtNumCampos.Name = "txtNumCampos";
+            this.txtNumCampos.Size = new System.Drawing.Size(35, 20);
+            this.txtNumCampos.TabIndex = 29;
+            // 
+            // labelNumCampos
+            // 
+            this.labelNumCampos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelNumCampos.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumCampos.Location = new System.Drawing.Point(201, 16);
+            this.labelNumCampos.Name = "labelNumCampos";
+            this.labelNumCampos.Size = new System.Drawing.Size(67, 20);
+            this.labelNumCampos.TabIndex = 28;
+            this.labelNumCampos.Text = "# Campos";
+            // 
+            // labelTabla
+            // 
+            this.labelTabla.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelTabla.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTabla.Location = new System.Drawing.Point(13, 16);
+            this.labelTabla.Name = "labelTabla";
+            this.labelTabla.Size = new System.Drawing.Size(49, 20);
+            this.labelTabla.TabIndex = 21;
+            this.labelTabla.Text = "Tabla";
+            // 
+            // txtNomTabla
+            // 
+            this.txtNomTabla.Location = new System.Drawing.Point(68, 16);
+            this.txtNomTabla.Name = "txtNomTabla";
+            this.txtNomTabla.Size = new System.Drawing.Size(100, 20);
+            this.txtNomTabla.TabIndex = 20;
+            // 
+            // panelNomTab
+            // 
+            this.panelNomTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.panelNomTab.Controls.Add(this.btnEliminar);
+            this.panelNomTab.Controls.Add(this.labelNumCampos);
+            this.panelNomTab.Controls.Add(this.txtNumCampos);
+            this.panelNomTab.Controls.Add(this.btnAgregarCampos);
+            this.panelNomTab.Controls.Add(this.txtNomTabla);
+            this.panelNomTab.Controls.Add(this.labelTabla);
+            this.panelNomTab.Location = new System.Drawing.Point(124, 240);
+            this.panelNomTab.Name = "panelNomTab";
+            this.panelNomTab.Size = new System.Drawing.Size(608, 51);
+            this.panelNomTab.TabIndex = 30;
+            this.panelNomTab.Visible = false;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminar.Image = global::ABD.Properties.Resources.Entypo_2796_0__241;
+            this.btnEliminar.Location = new System.Drawing.Point(171, 13);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(24, 24);
+            this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnEliminar.TabIndex = 30;
+            this.btnEliminar.TabStop = false;
+            this.btnEliminar.Visible = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnAgregarCampos
+            // 
+            this.btnAgregarCampos.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarCampos.Image = global::ABD.Properties.Resources.Entypo_2795_0__24;
+            this.btnAgregarCampos.Location = new System.Drawing.Point(315, 15);
+            this.btnAgregarCampos.Name = "btnAgregarCampos";
+            this.btnAgregarCampos.Size = new System.Drawing.Size(24, 24);
+            this.btnAgregarCampos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnAgregarCampos.TabIndex = 19;
+            this.btnAgregarCampos.TabStop = false;
+            this.btnAgregarCampos.Click += new System.EventHandler(this.AgregarCampo_Click);
+            // 
+            // pictureBD
+            // 
+            this.pictureBD.Image = global::ABD.Properties.Resources.Entypo_e754_0__64;
+            this.pictureBD.Location = new System.Drawing.Point(534, 46);
+            this.pictureBD.Name = "pictureBD";
+            this.pictureBD.Size = new System.Drawing.Size(64, 64);
+            this.pictureBD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBD.TabIndex = 17;
+            this.pictureBD.TabStop = false;
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(127)))));
-            this.ClientSize = new System.Drawing.Size(733, 459);
+            this.ClientSize = new System.Drawing.Size(733, 499);
+            this.Controls.Add(this.panelNomTab);
             this.Controls.Add(this.PanelCrearTablas);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBD);
+            this.Controls.Add(this.panelOpTablas);
             this.Controls.Add(this.bdusetxt);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dirUso);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form3";
-            this.Text = "Form3";
+            this.Text = "VentanaTablas";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelOpTablas.ResumeLayout(false);
+            this.panelOpTablas.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBorrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAñadir)).EndInit();
             this.PanelCrearTablas.ResumeLayout(false);
             this.PanelCrearTablas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelNomTab.ResumeLayout(false);
+            this.panelNomTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnAgregarCampos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -405,24 +450,27 @@
         private System.Windows.Forms.TextBox bdusetxt;
         private System.Windows.Forms.Button btnCrearTabla;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panelOpTablas;
+        private System.Windows.Forms.PictureBox pictureBD;
+        private System.Windows.Forms.Button btnEliminarTabla;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button btnUsarTabla;
+        private System.Windows.Forms.PictureBox pictureAñadir;
+        private System.Windows.Forms.PictureBox pictureBorrar;
         private System.Windows.Forms.Panel PanelCrearTablas;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.Label lcampo;
-        public System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label6;
-        public System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox CBTiposDatos;
-        private System.Windows.Forms.Label label7;
-        public System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.PictureBox btnAgregarCampos;
+        private System.Windows.Forms.Label labelCampo;
+        private System.Windows.Forms.Button btnGuardarTabla;
+        private System.Windows.Forms.Label labelTabla;
+        public System.Windows.Forms.TextBox txtNomTabla;
+        private System.Windows.Forms.Label labelTamaño;
+        private System.Windows.Forms.Label labelTipoDato;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtNumCampos;
+        private System.Windows.Forms.Label labelNumCampos;
+        private System.Windows.Forms.Panel panelNomTab;
+        private System.Windows.Forms.VScrollBar vScrollBar1;
+        private System.Windows.Forms.PictureBox btnEliminar;
     }
 }

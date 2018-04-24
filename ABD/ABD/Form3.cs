@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Text.RegularExpressions;
 namespace ABD
 {
     public partial class Form3 : Form
@@ -21,8 +21,14 @@ namespace ABD
             InitializeComponent();
             
         }
-
        
+     
+
+        //VARIABLES PARA AÑADIR NUEVO CAMPO       
+        int y = 60;
+        int numCampo = 1;
+       
+
         public string getBd()
         {
             return bdusetxt.Text;
@@ -30,6 +36,7 @@ namespace ABD
         }
         private string baseEnUso;
         private string _superBase;
+        
 
         public string BaseEnUso
         {
@@ -57,8 +64,6 @@ namespace ABD
             }
         }
 
-     
-
         private void Form3_Load(object sender, EventArgs e)
         {
           
@@ -75,22 +80,126 @@ namespace ABD
 
         private void CrearTabla(object sender, EventArgs e)
         {
-            PanelCrearTablas.Visible = true;
-            //Form2 f2 = new Form2();
-            //f2.Show();
-            //f2.usandoBD = getBd();
-            //f2.CrearTabla = true;
+            //limpiar
+            Limpiar();
+            //mostrar controles
+            panelNomTab.Visible = true;
+            labelNumCampos.Visible = true;
+            txtNumCampos.Visible = true;
+            btnAgregarCampos.Visible = true;
+
+            //ocultar controles no usados
+            btnEliminar.Visible = false;
+
 
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
+        private void Limpiar()
         {
+            txtNomTabla.Text = "";
+            txtNumCampos.Text = "";
             
+        }
 
+        
+        
+        private void AgregarCampo_Click(object sender, EventArgs e)
+        {
+           
+            
+                //campo tabla vacio
+                if (string.IsNullOrEmpty(txtNomTabla.Text))
+                {
+                    
+                        MessageBox.Show("No ha ingresado un nombre de tabla");
+                }
+                else
+                {
+                    PanelCrearTablas.Visible = true;
+                }
+
+            if (txtNumCampos.Visible) { 
+                     //insercion de #campos
+                    try
+                    {
+                        int TotalCampos = Int32.Parse(txtNumCampos.Text);
+
+                        for (int i = 1; i <= TotalCampos; i++)
+                        {
+                            AgregarNomCampo();
+                            AgregarTipoCampo();
+                            AgregarTamañoCampo();
+                            y += 20;
+                        }
+                    }
+                    catch(FormatException ex)
+                    {
+                        MessageBox.Show("Ingrese un Número Entero",ex.Message);
+                    }
+            
+                }
+        }
+
+        //METODOS PARA LA CREACION DE NUEVOS CAMPOS
+        public void AgregarNomCampo()
+        {         
+            TextBox txtNomCampo = new TextBox();
+            txtNomCampo.Name = "txtNomCampo" + numCampo.ToString();
+            txtNomCampo.Size = new System.Drawing.Size(100, 20);
+            txtNomCampo.MaxLength = 30;
+            txtNomCampo.Location = new Point(25, y);
+            PanelCrearTablas.Controls.Add(txtNomCampo);
+            
+        }
+
+        public void AgregarTipoCampo()
+        {
+            ComboBox cbTipoDato = new ComboBox();
+            cbTipoDato.Name = "cbTipoDato" + numCampo.ToString();
+            cbTipoDato.Size = new System.Drawing.Size(88, 21);
+            cbTipoDato.Items.AddRange(new object[] {
+            "texto",
+            "entero",
+            "decimal"});
+            cbTipoDato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cbTipoDato.Location = new Point(140, y);
+            PanelCrearTablas.Controls.Add(cbTipoDato);
+        }
+
+        public void AgregarTamañoCampo()
+        {
+            TextBox txtTamCampo = new TextBox();
+            txtTamCampo.Name = "txtTamañoCampo" + numCampo.ToString();
+            txtTamCampo.Size = new System.Drawing.Size(64, 20);
+            txtTamCampo.Location = new Point(245, y);
+            PanelCrearTablas.Controls.Add(txtTamCampo);
         }
         
-       
+        private void EliminarTabla(object sender,EventArgs e)
+        {
+           
+              panelNomTab.Visible = true;
+              btnEliminar.Visible = true;
 
-       
+            Limpiar();
+            //ocultar controles necesarios
+            PanelCrearTablas.Visible = false;
+            labelNumCampos.Visible = false;
+            txtNumCampos.Visible = false;           
+            btnAgregarCampos.Visible = false;
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGuardarTabla_Click(object sender, EventArgs e)
+        {
+            Form2 f2 = new Form2();
+            f2.usandoBD = getBd();
+            f2.CrearTabla = true;
+        }
     }
 }
