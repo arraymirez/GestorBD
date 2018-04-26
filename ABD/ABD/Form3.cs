@@ -13,21 +13,23 @@ namespace ABD
 {
     public partial class Form3 : Form
     {
-       
+
 
 
         public Form3()
         {
             InitializeComponent();
-            
+
         }
-       
-     
+
+
 
         //VARIABLES PARA AÑADIR NUEVO CAMPO       
         int y = 60;
         int numCampo = 1;
-        string[] campos;
+        TextBox[] campoNombre;
+        ComboBox[] campoTipo;
+        TextBox[] campoLongitud;
 
         public string getBd()
         {
@@ -98,7 +100,9 @@ namespace ABD
         {
             txtNomTabla.Text = "";
             txtNumCampos.Text = "";
-            
+            txtNomTabla.ReadOnly = false;
+            txtNumCampos.ReadOnly=false;
+            PanelCrearTablas.Visible = false;
         }
 
         
@@ -115,16 +119,20 @@ namespace ABD
                 }
                 else
                 {
+                    txtNomTabla.ReadOnly = true;
+                    txtNumCampos.ReadOnly = true;
                     PanelCrearTablas.Visible = true;
                 }
 
-            if (txtNumCampos.Visible) { 
-                     //insercion de #campos
-                    try
-                    {
-                        int TotalCampos = Int32.Parse(txtNumCampos.Text);
-
-                        for (int i = 1; i <= TotalCampos; i++)
+            if (txtNumCampos.Visible) {
+                //insercion de #campos
+                try
+                {
+                    int TotalCampos = Convert.ToInt32(txtNumCampos.Text);
+                    campoNombre = new TextBox[TotalCampos];
+                    campoLongitud = new TextBox[TotalCampos];
+                    campoTipo = new ComboBox[TotalCampos];
+                    for (int i = 0; i < TotalCampos; i++)
                         {
                             AgregarNomCampo(i);
                             AgregarTipoCampo(i);
@@ -142,12 +150,13 @@ namespace ABD
 
         //METODOS PARA LA CREACION DE NUEVOS CAMPOS
         public void AgregarNomCampo(int id)
-        {         
+        {
             TextBox txtNomCampo = new TextBox();
             txtNomCampo.Name = "txtNomCampo" + id;
             txtNomCampo.Size = new System.Drawing.Size(100, 20);
             txtNomCampo.MaxLength = 30;
             txtNomCampo.Location = new Point(25, y);
+            campoNombre[id] = txtNomCampo;
             PanelCrearTablas.Controls.Add(txtNomCampo);
             
         }
@@ -163,6 +172,7 @@ namespace ABD
             "decimal"});
             cbTipoDato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cbTipoDato.Location = new Point(140, y);
+            campoTipo[id] = cbTipoDato;
             PanelCrearTablas.Controls.Add(cbTipoDato);
         }
 
@@ -172,6 +182,7 @@ namespace ABD
             txtTamCampo.Name = "txtTamañoCampo" + id;
             txtTamCampo.Size = new System.Drawing.Size(64, 20);
             txtTamCampo.Location = new Point(245, y);
+            campoLongitud[id] = txtTamCampo;
             PanelCrearTablas.Controls.Add(txtTamCampo);
         }
         
@@ -198,10 +209,17 @@ namespace ABD
         private void btnGuardarTabla_Click(object sender, EventArgs e)
         {
             Directorios d = new Directorios();
-            d.CreaTabla(txtNomTabla.Text, bdusetxt.Text,campos);
-           
+            int inputs = Convert.ToInt32(txtNumCampos.Text);
+            string[] lineas = new string[inputs];
+            for (int i = 0; i < inputs; i++)
+            {
+                string cadena = campoNombre[i].Text + campoTipo[i].Text + campoLongitud[i].Text;
+                lineas[i] = cadena;
 
+            }
 
+            d.CreaTabla(txtNomTabla.Text, bdusetxt.Text, lineas);
+            
         }
     }
 }

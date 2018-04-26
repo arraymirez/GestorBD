@@ -118,13 +118,7 @@ namespace ABD
                 Usar = false;
                 v.ListaDirectorio(v.getDir());
             }
-            if (CrearTabla) {
-            
-                Directorios dir = new Directorios();
-                   dir.CreaTabla(txtnombrebd.Text + ".str",usandoBD);
-                dir.CreaTabla(txtnombrebd.Text + ".data",usandoBD);
-
-            }
+          
             this.Hide();
 
         }
@@ -133,7 +127,7 @@ namespace ABD
     }
    public class Directorios
     {
-        private readonly Encoding Encondig;
+        
 
         public void CrearDir(string nom)
         {
@@ -172,13 +166,12 @@ namespace ABD
                 }
                 else
                 {
-                    File.CreateText(tabla);
                     File.WriteAllLines(tabla, campos);
                     File.CreateText(tablaData);
                     MessageBox.Show("Tabla creada");
-
+                 
                 }
-            }
+             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
