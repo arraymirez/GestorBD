@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("bd1");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("bd1");
             this.dirUso = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -75,10 +75,10 @@
             this.dirUso.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dirUso.Location = new System.Drawing.Point(1, 22);
             this.dirUso.Name = "dirUso";
-            treeNode2.Name = "Node0";
-            treeNode2.Text = "bd1";
+            treeNode1.Name = "Node0";
+            treeNode1.Text = "bd1";
             this.dirUso.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode1});
             this.dirUso.Size = new System.Drawing.Size(123, 476);
             this.dirUso.TabIndex = 9;
             // 
@@ -243,7 +243,7 @@
             // 
             // PanelCrearTablas
             // 
-            this.PanelCrearTablas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.PanelCrearTablas.BackColor = System.Drawing.Color.PowderBlue;
             this.PanelCrearTablas.Controls.Add(this.vScrollBar1);
             this.PanelCrearTablas.Controls.Add(this.label5);
             this.PanelCrearTablas.Controls.Add(this.labelTamaño);
@@ -356,7 +356,7 @@
             // 
             // panelNomTab
             // 
-            this.panelNomTab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.panelNomTab.BackColor = System.Drawing.Color.CadetBlue;
             this.panelNomTab.Controls.Add(this.btnEliminar);
             this.panelNomTab.Controls.Add(this.labelNumCampos);
             this.panelNomTab.Controls.Add(this.txtNumCampos);

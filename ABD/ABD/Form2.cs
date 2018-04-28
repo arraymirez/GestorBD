@@ -118,22 +118,16 @@ namespace ABD
                 Usar = false;
                 v.ListaDirectorio(v.getDir());
             }
-            if (CrearTabla) {
-            
-                Directorios dir = new Directorios();
-                   dir.CreaTabla(txtnombrebd.Text + ".str",usandoBD);
-                dir.CreaTabla(txtnombrebd.Text + ".data",usandoBD);
-
-            }
+          
             this.Hide();
 
         }
 
       
     }
-    class Directorios
+   public class Directorios
     {
-
+        
 
         public void CrearDir(string nom)
         {
@@ -159,11 +153,11 @@ namespace ABD
 
 
         }
-        public void CreaTabla(string archivo,string bd)
+        public void CreaTabla(string archivo, string bd, string[] campos)
         {
          
-            string tabla = Application.StartupPath + @"\Gestor\" + bd + "\\" + archivo;
-
+            string tabla = Application.StartupPath + @"\Gestor\" + bd + "\\" + archivo +".str";
+            string tablaData= Application.StartupPath + @"\Gestor\" + bd + "\\" + archivo + ".data";
             try
             {
                 if (File.Exists(tabla))
@@ -172,11 +166,12 @@ namespace ABD
                 }
                 else
                 {
-                    File.CreateText(tabla);
+                    File.WriteAllLines(tabla, campos);
+                    File.CreateText(tablaData);
                     MessageBox.Show("Tabla creada");
-
+                 
                 }
-            }
+             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
