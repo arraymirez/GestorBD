@@ -92,6 +92,8 @@ namespace ABD
 
             //ocultar controles no usados
             btnEliminar.Visible = false;
+            panelConsultas.SendToBack();
+            panelConsultas.Visible = false;
 
 
         }
@@ -219,6 +221,22 @@ namespace ABD
             }
 
             d.CreaTabla(txtNomTabla.Text, bdusetxt.Text, lineas);
+            
+        }
+
+        private void btnUsarTabla_Click(object sender, EventArgs e)
+        {
+            panelNomTab.Visible = true;
+            panelConsultas.Visible = true;
+            PanelCrearTablas.SendToBack();//manda el panel atras 
+            PanelCrearTablas.Visible = false;
+            
+
+            txtNumCampos.Visible = false;
+            labelNumCampos.Visible = false;
+            btnAgregarCampos.Visible = false;
+            btnEliminar.Visible = false;
+            
             
         }
     }

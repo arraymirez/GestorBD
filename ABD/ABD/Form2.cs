@@ -29,6 +29,7 @@ namespace ABD
         private bool borrar;
         private bool crearTabla;
 
+         
 
         /*GETTERS AND SETTERS*/
         public bool Crear
@@ -101,6 +102,7 @@ namespace ABD
                     dir.CrearDir(nombreDB);
                     v.ListaDirectorio(v.getDir());
                     txtnombrebd.Text = "";
+                    this.Hide();
                 }
                 else
                 {
@@ -112,14 +114,24 @@ namespace ABD
 
             if (Usar)
             {
+                string bd= Application.StartupPath + @"\Gestor\" + nombreDB;
+                if (Directory.Exists(bd))
+                { 
                 Form3 v3 = new Form3();
                 v3.BaseEnUso = txtnombrebd.Text;
                 v3.Show();
                 Usar = false;
+                this.Hide();
                 v.ListaDirectorio(v.getDir());
+                }
+                else
+                {
+                    MessageBox.Show("No existe la base de datos");
+                }
             }
+            
           
-            this.Hide();
+            
 
         }
 
@@ -131,7 +143,7 @@ namespace ABD
 
         public void CrearDir(string nom)
         {
-            string carpeta = Application.StartupPath + @"\Gestor\" + nom;
+            string  carpeta = Application.StartupPath + @"\Gestor\" + nom;
             Ventana1 v = new Ventana1();
             try
             {
