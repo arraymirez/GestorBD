@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("bd1");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("bd1");
             this.dirUso = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -45,16 +45,16 @@
             this.btnCrearTabla = new System.Windows.Forms.Button();
             this.PanelCrearTablas = new System.Windows.Forms.Panel();
             this.ScrollCrearTabla = new System.Windows.Forms.VScrollBar();
-            this.panelConsultas = new System.Windows.Forms.Panel();
-            this.labelQuery = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.txtConsultas = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.labelTamaño = new System.Windows.Forms.Label();
             this.labelTipoDato = new System.Windows.Forms.Label();
             this.btnGuardarTabla = new System.Windows.Forms.Button();
             this.labelCampo = new System.Windows.Forms.Label();
+            this.panelConsultas = new System.Windows.Forms.Panel();
+            this.labelQuery = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.txtConsultas = new System.Windows.Forms.TextBox();
             this.txtNumCampos = new System.Windows.Forms.TextBox();
             this.labelNumCampos = new System.Windows.Forms.Label();
             this.labelTabla = new System.Windows.Forms.Label();
@@ -63,6 +63,7 @@
             this.btnEliminar = new System.Windows.Forms.PictureBox();
             this.btnAgregarCampos = new System.Windows.Forms.PictureBox();
             this.pictureBD = new System.Windows.Forms.PictureBox();
+            this.btnNombreTabla = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelOpTablas.SuspendLayout();
@@ -75,6 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregarCampos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNombreTabla)).BeginInit();
             this.SuspendLayout();
             // 
             // dirUso
@@ -82,10 +84,10 @@
             this.dirUso.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dirUso.Location = new System.Drawing.Point(1, 22);
             this.dirUso.Name = "dirUso";
-            treeNode3.Name = "Node0";
-            treeNode3.Text = "bd1";
+            treeNode1.Name = "Node0";
+            treeNode1.Text = "bd1";
             this.dirUso.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode3});
+            treeNode1});
             this.dirUso.Size = new System.Drawing.Size(123, 487);
             this.dirUso.TabIndex = 9;
             // 
@@ -271,6 +273,62 @@
             this.ScrollCrearTabla.Size = new System.Drawing.Size(23, 219);
             this.ScrollCrearTabla.TabIndex = 28;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.ForeColor = System.Drawing.Color.Gray;
+            this.label5.Location = new System.Drawing.Point(460, 144);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 20);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Guardar";
+            // 
+            // labelTamaño
+            // 
+            this.labelTamaño.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelTamaño.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTamaño.Location = new System.Drawing.Point(245, 25);
+            this.labelTamaño.Name = "labelTamaño";
+            this.labelTamaño.Size = new System.Drawing.Size(64, 20);
+            this.labelTamaño.TabIndex = 26;
+            this.labelTamaño.Text = "Tamaño";
+            // 
+            // labelTipoDato
+            // 
+            this.labelTipoDato.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelTipoDato.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTipoDato.Location = new System.Drawing.Point(140, 25);
+            this.labelTipoDato.Name = "labelTipoDato";
+            this.labelTipoDato.Size = new System.Drawing.Size(88, 20);
+            this.labelTipoDato.TabIndex = 24;
+            this.labelTipoDato.Text = "Tipo de Dato";
+            // 
+            // btnGuardarTabla
+            // 
+            this.btnGuardarTabla.BackColor = System.Drawing.Color.Transparent;
+            this.btnGuardarTabla.BackgroundImage = global::ABD.Properties.Resources.icons8_agregar_propiedad_64;
+            this.btnGuardarTabla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnGuardarTabla.FlatAppearance.BorderSize = 0;
+            this.btnGuardarTabla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarTabla.ForeColor = System.Drawing.Color.White;
+            this.btnGuardarTabla.Location = new System.Drawing.Point(451, 70);
+            this.btnGuardarTabla.Name = "btnGuardarTabla";
+            this.btnGuardarTabla.Size = new System.Drawing.Size(86, 62);
+            this.btnGuardarTabla.TabIndex = 22;
+            this.btnGuardarTabla.UseVisualStyleBackColor = false;
+            this.btnGuardarTabla.Click += new System.EventHandler(this.btnGuardarTabla_Click);
+            // 
+            // labelCampo
+            // 
+            this.labelCampo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelCampo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCampo.Location = new System.Drawing.Point(25, 25);
+            this.labelCampo.Name = "labelCampo";
+            this.labelCampo.Size = new System.Drawing.Size(100, 20);
+            this.labelCampo.TabIndex = 1;
+            this.labelCampo.Text = "campo";
+            // 
             // panelConsultas
             // 
             this.panelConsultas.BackColor = System.Drawing.Color.PowderBlue;
@@ -331,62 +389,6 @@
             this.txtConsultas.Size = new System.Drawing.Size(477, 22);
             this.txtConsultas.TabIndex = 0;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(460, 144);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 20);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "Guardar";
-            // 
-            // labelTamaño
-            // 
-            this.labelTamaño.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelTamaño.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTamaño.Location = new System.Drawing.Point(245, 25);
-            this.labelTamaño.Name = "labelTamaño";
-            this.labelTamaño.Size = new System.Drawing.Size(64, 20);
-            this.labelTamaño.TabIndex = 26;
-            this.labelTamaño.Text = "Tamaño";
-            // 
-            // labelTipoDato
-            // 
-            this.labelTipoDato.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelTipoDato.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTipoDato.Location = new System.Drawing.Point(140, 25);
-            this.labelTipoDato.Name = "labelTipoDato";
-            this.labelTipoDato.Size = new System.Drawing.Size(88, 20);
-            this.labelTipoDato.TabIndex = 24;
-            this.labelTipoDato.Text = "Tipo de Dato";
-            // 
-            // btnGuardarTabla
-            // 
-            this.btnGuardarTabla.BackColor = System.Drawing.Color.Transparent;
-            this.btnGuardarTabla.BackgroundImage = global::ABD.Properties.Resources.icons8_agregar_propiedad_64;
-            this.btnGuardarTabla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnGuardarTabla.FlatAppearance.BorderSize = 0;
-            this.btnGuardarTabla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarTabla.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarTabla.Location = new System.Drawing.Point(451, 70);
-            this.btnGuardarTabla.Name = "btnGuardarTabla";
-            this.btnGuardarTabla.Size = new System.Drawing.Size(86, 62);
-            this.btnGuardarTabla.TabIndex = 22;
-            this.btnGuardarTabla.UseVisualStyleBackColor = false;
-            this.btnGuardarTabla.Click += new System.EventHandler(this.btnGuardarTabla_Click);
-            // 
-            // labelCampo
-            // 
-            this.labelCampo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelCampo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCampo.Location = new System.Drawing.Point(25, 25);
-            this.labelCampo.Name = "labelCampo";
-            this.labelCampo.Size = new System.Drawing.Size(100, 20);
-            this.labelCampo.TabIndex = 1;
-            this.labelCampo.Text = "campo";
-            // 
             // txtNumCampos
             // 
             this.txtNumCampos.Location = new System.Drawing.Point(274, 16);
@@ -425,6 +427,7 @@
             // panelNomTab
             // 
             this.panelNomTab.BackColor = System.Drawing.Color.CadetBlue;
+            this.panelNomTab.Controls.Add(this.btnNombreTabla);
             this.panelNomTab.Controls.Add(this.btnEliminar);
             this.panelNomTab.Controls.Add(this.labelNumCampos);
             this.panelNomTab.Controls.Add(this.txtNumCampos);
@@ -472,6 +475,18 @@
             this.pictureBD.TabIndex = 17;
             this.pictureBD.TabStop = false;
             // 
+            // btnNombreTabla
+            // 
+            this.btnNombreTabla.BackColor = System.Drawing.Color.Transparent;
+            this.btnNombreTabla.Image = global::ABD.Properties.Resources.FontAwesome_f00c_0__32;
+            this.btnNombreTabla.Location = new System.Drawing.Point(351, 16);
+            this.btnNombreTabla.Name = "btnNombreTabla";
+            this.btnNombreTabla.Size = new System.Drawing.Size(25, 23);
+            this.btnNombreTabla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnNombreTabla.TabIndex = 31;
+            this.btnNombreTabla.TabStop = false;
+            this.btnNombreTabla.Visible = false;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -508,6 +523,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregarCampos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNombreTabla)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -549,5 +565,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.TextBox txtConsultas;
+        private System.Windows.Forms.PictureBox btnNombreTabla;
     }
 }

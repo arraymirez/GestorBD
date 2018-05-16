@@ -236,8 +236,9 @@ namespace ABD
             labelNumCampos.Visible = false;
             btnAgregarCampos.Visible = false;
             btnEliminar.Visible = false;
-            
-            
+            btnNombreTabla.Visible = true;
+
+
         }
     }
 }
