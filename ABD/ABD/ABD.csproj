@@ -86,6 +86,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -149,6 +150,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-agregar-propiedad-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Entypo_e741%280%29_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Entypo_2796%280%29_241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

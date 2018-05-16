@@ -18,14 +18,19 @@ namespace ABD
         {
             InitializeComponent();
         }
-        Regex nombreBDValidacion =  new Regex("^([a-zA-Z]+)([a-zA-Z]|([0-9]))*$");
+
+       public Regex nombreValidacion =  new Regex("^([a-zA-Z]+)([a-zA-Z]|([0-9]))*$");
         public string nombreDB;
         public string usandoBD;
+
         /*VARIABLES*/
         private bool crear;
         private bool usar;
         private bool borrar;
         private bool crearTabla;
+
+         
+
         /*GETTERS AND SETTERS*/
         public bool Crear
         {
@@ -88,15 +93,16 @@ namespace ABD
         private void button1_Click(object sender, EventArgs e)
         {
             Ventana1 v = new Ventana1();
-            nombreDB = nombrebd.Text;
+            nombreDB = txtnombrebd.Text;
             if (Crear)
             {
                 Directorios dir = new Directorios();
-                if (nombreBDValidacion.IsMatch(nombreDB))
+                if (nombreValidacion.IsMatch(nombreDB))
                 {
                     dir.CrearDir(nombreDB);
                     v.ListaDirectorio(v.getDir());
-                    nombrebd.Text = "";
+                    txtnombrebd.Text = "";
+                    this.Hide();
                 }
                 else
                 {
@@ -108,31 +114,36 @@ namespace ABD
 
             if (Usar)
             {
+                string bd= Application.StartupPath + @"\Gestor\" + nombreDB;
+                if (Directory.Exists(bd))
+                { 
                 Form3 v3 = new Form3();
-                v3.BaseEnUso = nombrebd.Text;
+                v3.BaseEnUso = txtnombrebd.Text;
                 v3.Show();
                 Usar = false;
+                this.Hide();
                 v.ListaDirectorio(v.getDir());
+                }
+                else
+                {
+                    MessageBox.Show("No existe la base de datos");
+                }
             }
-            if (CrearTabla) {
             
-                Directorios dir = new Directorios();
-                   dir.CreaTabla(nombrebd.Text + ".str",usandoBD);
-                dir.CreaTabla(nombrebd.Text + ".data",usandoBD);
-
-            }
-            this.Hide();
+          
+            
 
         }
- 
-        }
-    class Directorios
+
+      
+    }
+   public class Directorios
     {
-
+        
 
         public void CrearDir(string nom)
         {
-            string carpeta = Application.StartupPath + @"\Gestor\" + nom;
+            string  carpeta = Application.StartupPath + @"\Gestor\" + nom;
             Ventana1 v = new Ventana1();
             try
             {
@@ -154,11 +165,11 @@ namespace ABD
 
 
         }
-        public void CreaTabla(string archivo,string bd)
+        public void CreaTabla(string archivo, string bd, string[] campos)
         {
          
-            string tabla = Application.StartupPath + @"\Gestor\" + bd + "\\" + archivo;
-
+            string tabla = Application.StartupPath + @"\Gestor\" + bd + "\\" + archivo +".str";
+            string tablaData= Application.StartupPath + @"\Gestor\" + bd + "\\" + archivo + ".data";
             try
             {
                 if (File.Exists(tabla))
@@ -167,11 +178,12 @@ namespace ABD
                 }
                 else
                 {
-                    File.CreateText(tabla);
+                    File.WriteAllLines(tabla, campos);
+                    File.CreateText(tablaData);
                     MessageBox.Show("Tabla creada");
-
+                 
                 }
-            }
+             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
