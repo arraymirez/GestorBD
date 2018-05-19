@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("bd1");
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("bd1");
             this.dirUso = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -60,10 +60,11 @@
             this.labelTabla = new System.Windows.Forms.Label();
             this.txtNomTabla = new System.Windows.Forms.TextBox();
             this.panelNomTab = new System.Windows.Forms.Panel();
+            this.btnNombreTabla = new System.Windows.Forms.PictureBox();
             this.btnEliminar = new System.Windows.Forms.PictureBox();
             this.btnAgregarCampos = new System.Windows.Forms.PictureBox();
             this.pictureBD = new System.Windows.Forms.PictureBox();
-            this.btnNombreTabla = new System.Windows.Forms.PictureBox();
+            this.panelAtributos = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelOpTablas.SuspendLayout();
@@ -73,10 +74,10 @@
             this.panelConsultas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelNomTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNombreTabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregarCampos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNombreTabla)).BeginInit();
             this.SuspendLayout();
             // 
             // dirUso
@@ -84,11 +85,11 @@
             this.dirUso.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dirUso.Location = new System.Drawing.Point(1, 22);
             this.dirUso.Name = "dirUso";
-            treeNode1.Name = "Node0";
-            treeNode1.Text = "bd1";
+            treeNode2.Name = "Node0";
+            treeNode2.Text = "bd1";
             this.dirUso.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            this.dirUso.Size = new System.Drawing.Size(123, 487);
+            treeNode2});
+            this.dirUso.Size = new System.Drawing.Size(123, 266);
             this.dirUso.TabIndex = 9;
             // 
             // panel2
@@ -440,6 +441,19 @@
             this.panelNomTab.TabIndex = 30;
             this.panelNomTab.Visible = false;
             // 
+            // btnNombreTabla
+            // 
+            this.btnNombreTabla.BackColor = System.Drawing.Color.Transparent;
+            this.btnNombreTabla.Image = global::ABD.Properties.Resources.FontAwesome_f00c_0__32;
+            this.btnNombreTabla.Location = new System.Drawing.Point(351, 16);
+            this.btnNombreTabla.Name = "btnNombreTabla";
+            this.btnNombreTabla.Size = new System.Drawing.Size(25, 23);
+            this.btnNombreTabla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnNombreTabla.TabIndex = 31;
+            this.btnNombreTabla.TabStop = false;
+            this.btnNombreTabla.Visible = false;
+            this.btnNombreTabla.Click += new System.EventHandler(this.btnNombreTabla_Click);
+            // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
@@ -475,17 +489,12 @@
             this.pictureBD.TabIndex = 17;
             this.pictureBD.TabStop = false;
             // 
-            // btnNombreTabla
+            // panelAtributos
             // 
-            this.btnNombreTabla.BackColor = System.Drawing.Color.Transparent;
-            this.btnNombreTabla.Image = global::ABD.Properties.Resources.FontAwesome_f00c_0__32;
-            this.btnNombreTabla.Location = new System.Drawing.Point(351, 16);
-            this.btnNombreTabla.Name = "btnNombreTabla";
-            this.btnNombreTabla.Size = new System.Drawing.Size(25, 23);
-            this.btnNombreTabla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnNombreTabla.TabIndex = 31;
-            this.btnNombreTabla.TabStop = false;
-            this.btnNombreTabla.Visible = false;
+            this.panelAtributos.Location = new System.Drawing.Point(1, 293);
+            this.panelAtributos.Name = "panelAtributos";
+            this.panelAtributos.Size = new System.Drawing.Size(123, 211);
+            this.panelAtributos.TabIndex = 32;
             // 
             // Form3
             // 
@@ -493,6 +502,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(127)))));
             this.ClientSize = new System.Drawing.Size(728, 509);
+            this.Controls.Add(this.panelAtributos);
             this.Controls.Add(this.PanelCrearTablas);
             this.Controls.Add(this.panelNomTab);
             this.Controls.Add(this.pictureBD);
@@ -520,10 +530,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelNomTab.ResumeLayout(false);
             this.panelNomTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnNombreTabla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregarCampos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnNombreTabla)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -566,5 +576,6 @@
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.TextBox txtConsultas;
         private System.Windows.Forms.PictureBox btnNombreTabla;
+        private System.Windows.Forms.Panel panelAtributos;
     }
 }
