@@ -191,5 +191,32 @@ namespace ABD
 
 
         }
+        /// <summary>
+        /// Retorna las cadenas de los campos de la tabla incluyendo los separadores.
+        /// </summary>
+        /// <param name="tabla">Nombre de la tabla</param>
+        /// <param name="bd">Base de datos en uso</param>
+        /// <returns>Lista de elementos string</returns>
+        public List<string> LeerAtributosTabla(string tabla,string bd)
+        {
+            string rutaTablaCampos = Application.StartupPath + @"\Gestor\" + bd + "\\" + tabla + ".str";
+            List<string> atributos=null;
+            try
+            {
+                if (File.Exists(rutaTablaCampos))
+                {
+                  atributos=File.ReadAllLines(rutaTablaCampos).ToList();
+                }
+                else { MessageBox.Show("La tabla no existe.");  }
+            }
+            catch (Exception e)
+            {
+
+                MessageBox.Show(e.Message);
+            }
+
+            return atributos;
+        }
+
     }
 }

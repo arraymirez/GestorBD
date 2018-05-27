@@ -215,7 +215,7 @@ namespace ABD
             string[] lineas = new string[inputs];
             for (int i = 0; i < inputs; i++)
             {
-                string cadena = campoNombre[i].Text + campoTipo[i].Text + campoLongitud[i].Text;
+                string cadena = campoNombre[i].Text +"|"+ campoTipo[i].Text + "|" + campoLongitud[i].Text;
                 lineas[i] = cadena;
 
             }
@@ -239,6 +239,28 @@ namespace ABD
             btnNombreTabla.Visible = true;
 
 
+        }
+
+
+
+        public void obtenerAtributos(string nombreTabla)
+        {
+            Directorios dir = new Directorios();
+           List<string>campos= dir.LeerAtributosTabla(nombreTabla, bdusetxt.Text);
+            foreach (string linea in campos)
+            {
+
+                MessageBox.Show("Campo: " + linea.Split('|')[0] + "Tipo: " + linea.Split('|')[1]+"Longitud: " + linea.Split('|')[2]);
+
+
+            }
+
+
+        }
+
+        private void btnNombreTabla_Click(object sender, EventArgs e)
+        {
+            obtenerAtributos(txtNomTabla.Text.Trim());
         }
     }
 }
