@@ -78,3 +78,4 @@ C:\Users\jeny_\Repositorios\GestorBD\ABD\ABD\obj\Debug\ABD.Form2.resources
 C:\Users\jeny_\Repositorios\GestorBD\ABD\ABD\obj\Debug\ABD.Form3.resources
 C:\Users\jeny_\Repositorios\GestorBD\ABD\ABD\obj\Debug\ABD.Properties.Resources.resources
 C:\Users\jeny_\Repositorios\GestorBD\ABD\ABD\obj\Debug\ABD.csproj.GenerateResource.Cache
+D:\git\Gestor\ABD\ABD\obj\Debug\ABD.csproj.CoreCompileInputs.cache
