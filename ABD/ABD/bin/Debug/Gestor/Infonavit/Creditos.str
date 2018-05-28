@@ -1,4 +1,4 @@
-NumeroDeCreditoentero10
-Nombretexto20
-Direcciontexto60
-Saldodecimal10
+NumeroDeCredito|entero|10
+Nombre|texto|20
+Direccion|texto|60
+Saldo|decimal|10

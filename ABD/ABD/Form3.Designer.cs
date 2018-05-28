@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("bd1");
+            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("bd1");
             this.dirUso = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -51,10 +51,7 @@
             this.btnGuardarTabla = new System.Windows.Forms.Button();
             this.labelCampo = new System.Windows.Forms.Label();
             this.panelConsultas = new System.Windows.Forms.Panel();
-            this.labelQuery = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.txtConsultas = new System.Windows.Forms.TextBox();
+            this.queryResultados = new System.Windows.Forms.DataGridView();
             this.txtNumCampos = new System.Windows.Forms.TextBox();
             this.labelNumCampos = new System.Windows.Forms.Label();
             this.labelTabla = new System.Windows.Forms.Label();
@@ -64,7 +61,16 @@
             this.btnEliminar = new System.Windows.Forms.PictureBox();
             this.btnAgregarCampos = new System.Windows.Forms.PictureBox();
             this.pictureBD = new System.Windows.Forms.PictureBox();
-            this.panelAtributos = new System.Windows.Forms.Panel();
+            this.tablaAtributos = new System.Windows.Forms.DataGridView();
+            this.nombresCampos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.infoCampos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbOperacion = new System.Windows.Forms.ComboBox();
+            this.queryTexto = new System.Windows.Forms.TextBox();
+            this.queryCondicion = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnEjecutarQuery = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelOpTablas.SuspendLayout();
@@ -72,12 +78,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureAñadir)).BeginInit();
             this.PanelCrearTablas.SuspendLayout();
             this.panelConsultas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.queryResultados)).BeginInit();
             this.panelNomTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnNombreTabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregarCampos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaAtributos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEjecutarQuery)).BeginInit();
             this.SuspendLayout();
             // 
             // dirUso
@@ -85,10 +93,10 @@
             this.dirUso.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dirUso.Location = new System.Drawing.Point(1, 22);
             this.dirUso.Name = "dirUso";
-            treeNode2.Name = "Node0";
-            treeNode2.Text = "bd1";
+            treeNode1.Name = "Node0";
+            treeNode1.Text = "bd1";
             this.dirUso.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode2});
+            treeNode1});
             this.dirUso.Size = new System.Drawing.Size(123, 266);
             this.dirUso.TabIndex = 9;
             // 
@@ -333,62 +341,32 @@
             // panelConsultas
             // 
             this.panelConsultas.BackColor = System.Drawing.Color.PowderBlue;
-            this.panelConsultas.Controls.Add(this.labelQuery);
-            this.panelConsultas.Controls.Add(this.dataGridView1);
-            this.panelConsultas.Controls.Add(this.btnConsultar);
-            this.panelConsultas.Controls.Add(this.txtConsultas);
+            this.panelConsultas.Controls.Add(this.label8);
+            this.panelConsultas.Controls.Add(this.label7);
+            this.panelConsultas.Controls.Add(this.label6);
+            this.panelConsultas.Controls.Add(this.queryCondicion);
+            this.panelConsultas.Controls.Add(this.queryTexto);
+            this.panelConsultas.Controls.Add(this.cmbOperacion);
+            this.panelConsultas.Controls.Add(this.queryResultados);
             this.panelConsultas.Location = new System.Drawing.Point(124, 290);
             this.panelConsultas.Name = "panelConsultas";
             this.panelConsultas.Size = new System.Drawing.Size(608, 219);
             this.panelConsultas.TabIndex = 31;
             this.panelConsultas.Visible = false;
             // 
-            // labelQuery
+            // queryResultados
             // 
-            this.labelQuery.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelQuery.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelQuery.Location = new System.Drawing.Point(13, 48);
-            this.labelQuery.Name = "labelQuery";
-            this.labelQuery.Size = new System.Drawing.Size(568, 20);
-            this.labelQuery.TabIndex = 31;
-            this.labelQuery.Text = "Query";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.GridColor = System.Drawing.Color.Teal;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 71);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(569, 138);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // btnConsultar
-            // 
-            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
-            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnConsultar.ForeColor = System.Drawing.Color.White;
-            this.btnConsultar.Location = new System.Drawing.Point(497, 20);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(84, 24);
-            this.btnConsultar.TabIndex = 1;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = false;
-            // 
-            // txtConsultas
-            // 
-            this.txtConsultas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtConsultas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.txtConsultas.Location = new System.Drawing.Point(14, 21);
-            this.txtConsultas.MaxLength = 1000;
-            this.txtConsultas.Name = "txtConsultas";
-            this.txtConsultas.Size = new System.Drawing.Size(477, 22);
-            this.txtConsultas.TabIndex = 0;
+            this.queryResultados.AllowUserToAddRows = false;
+            this.queryResultados.AllowUserToDeleteRows = false;
+            this.queryResultados.BackgroundColor = System.Drawing.Color.White;
+            this.queryResultados.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.queryResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.queryResultados.GridColor = System.Drawing.Color.Teal;
+            this.queryResultados.Location = new System.Drawing.Point(13, 90);
+            this.queryResultados.Name = "queryResultados";
+            this.queryResultados.ReadOnly = true;
+            this.queryResultados.Size = new System.Drawing.Size(569, 117);
+            this.queryResultados.TabIndex = 2;
             // 
             // txtNumCampos
             // 
@@ -428,6 +406,7 @@
             // panelNomTab
             // 
             this.panelNomTab.BackColor = System.Drawing.Color.CadetBlue;
+            this.panelNomTab.Controls.Add(this.btnEjecutarQuery);
             this.panelNomTab.Controls.Add(this.btnNombreTabla);
             this.panelNomTab.Controls.Add(this.btnEliminar);
             this.panelNomTab.Controls.Add(this.labelNumCampos);
@@ -489,12 +468,103 @@
             this.pictureBD.TabIndex = 17;
             this.pictureBD.TabStop = false;
             // 
-            // panelAtributos
+            // tablaAtributos
             // 
-            this.panelAtributos.Location = new System.Drawing.Point(1, 293);
-            this.panelAtributos.Name = "panelAtributos";
-            this.panelAtributos.Size = new System.Drawing.Size(123, 211);
-            this.panelAtributos.TabIndex = 32;
+            this.tablaAtributos.AllowUserToAddRows = false;
+            this.tablaAtributos.AllowUserToDeleteRows = false;
+            this.tablaAtributos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaAtributos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nombresCampos,
+            this.infoCampos});
+            this.tablaAtributos.Location = new System.Drawing.Point(1, 294);
+            this.tablaAtributos.Name = "tablaAtributos";
+            this.tablaAtributos.ReadOnly = true;
+            this.tablaAtributos.Size = new System.Drawing.Size(117, 212);
+            this.tablaAtributos.TabIndex = 32;
+            // 
+            // nombresCampos
+            // 
+            this.nombresCampos.HeaderText = "Campo";
+            this.nombresCampos.Name = "nombresCampos";
+            this.nombresCampos.ReadOnly = true;
+            this.nombresCampos.Width = 40;
+            // 
+            // infoCampos
+            // 
+            this.infoCampos.HeaderText = "Tipo";
+            this.infoCampos.Name = "infoCampos";
+            this.infoCampos.ReadOnly = true;
+            this.infoCampos.Width = 50;
+            // 
+            // cmbOperacion
+            // 
+            this.cmbOperacion.FormattingEnabled = true;
+            this.cmbOperacion.Items.AddRange(new object[] {
+            "Insertar",
+            "Actualizar",
+            "Buscar",
+            "Eliminar"});
+            this.cmbOperacion.Location = new System.Drawing.Point(13, 34);
+            this.cmbOperacion.Name = "cmbOperacion";
+            this.cmbOperacion.Size = new System.Drawing.Size(101, 21);
+            this.cmbOperacion.TabIndex = 3;
+            // 
+            // queryTexto
+            // 
+            this.queryTexto.Location = new System.Drawing.Point(131, 35);
+            this.queryTexto.Name = "queryTexto";
+            this.queryTexto.Size = new System.Drawing.Size(245, 20);
+            this.queryTexto.TabIndex = 4;
+            this.queryTexto.Text = "*";
+            // 
+            // queryCondicion
+            // 
+            this.queryCondicion.Location = new System.Drawing.Point(399, 35);
+            this.queryCondicion.Name = "queryCondicion";
+            this.queryCondicion.Size = new System.Drawing.Size(183, 20);
+            this.queryCondicion.TabIndex = 5;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(22, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Tipo query:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(137, 12);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 13);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Query:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(407, 12);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 13);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Condicion:";
+            // 
+            // btnEjecutarQuery
+            // 
+            this.btnEjecutarQuery.Image = global::ABD.Properties.Resources.Entypo_e754_0__64;
+            this.btnEjecutarQuery.Location = new System.Drawing.Point(552, 9);
+            this.btnEjecutarQuery.Name = "btnEjecutarQuery";
+            this.btnEjecutarQuery.Size = new System.Drawing.Size(40, 35);
+            this.btnEjecutarQuery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnEjecutarQuery.TabIndex = 32;
+            this.btnEjecutarQuery.TabStop = false;
+            this.btnEjecutarQuery.Visible = false;
+            this.btnEjecutarQuery.Click += new System.EventHandler(this.btnEjecutarQuery_Click);
             // 
             // Form3
             // 
@@ -502,8 +572,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(56)))), ((int)(((byte)(127)))));
             this.ClientSize = new System.Drawing.Size(728, 509);
-            this.Controls.Add(this.panelAtributos);
-            this.Controls.Add(this.PanelCrearTablas);
+            this.Controls.Add(this.tablaAtributos);
             this.Controls.Add(this.panelNomTab);
             this.Controls.Add(this.pictureBD);
             this.Controls.Add(this.panelOpTablas);
@@ -512,6 +581,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dirUso);
             this.Controls.Add(this.panelConsultas);
+            this.Controls.Add(this.PanelCrearTablas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form3";
             this.Text = "VentanaTablas";
@@ -527,13 +597,15 @@
             this.PanelCrearTablas.PerformLayout();
             this.panelConsultas.ResumeLayout(false);
             this.panelConsultas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.queryResultados)).EndInit();
             this.panelNomTab.ResumeLayout(false);
             this.panelNomTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnNombreTabla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregarCampos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaAtributos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEjecutarQuery)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -571,11 +643,17 @@
         private System.Windows.Forms.VScrollBar ScrollCrearTabla;
         private System.Windows.Forms.PictureBox btnEliminar;
         private System.Windows.Forms.Panel panelConsultas;
-        private System.Windows.Forms.Label labelQuery;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnConsultar;
-        private System.Windows.Forms.TextBox txtConsultas;
+        private System.Windows.Forms.DataGridView queryResultados;
         private System.Windows.Forms.PictureBox btnNombreTabla;
-        private System.Windows.Forms.Panel panelAtributos;
+        private System.Windows.Forms.DataGridView tablaAtributos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombresCampos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn infoCampos;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox queryCondicion;
+        private System.Windows.Forms.TextBox queryTexto;
+        private System.Windows.Forms.ComboBox cmbOperacion;
+        private System.Windows.Forms.PictureBox btnEjecutarQuery;
     }
 }
