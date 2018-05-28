@@ -79,3 +79,14 @@ D:\git\Gestor\ABD\ABD\obj\Debug\ABD.csproj.CoreCompileInputs.cache
 D:\git\Gestor\ABD\ABD\obj\Debug\ABD.exe
 D:\git\Gestor\ABD\ABD\obj\Debug\ABD.pdb
 D:\git\Gestor\ABD\ABD\obj\Debug\ABD.csprojResolveAssemblyReference.cache
+C:\Users\jeny_\Repositorios\ABD\ABD\ABD\bin\Debug\ABD.exe.config
+C:\Users\jeny_\Repositorios\ABD\ABD\ABD\obj\Debug\ABD.exe
+C:\Users\jeny_\Repositorios\ABD\ABD\ABD\obj\Debug\ABD.pdb
+C:\Users\jeny_\Repositorios\ABD\ABD\ABD\bin\Debug\ABD.exe
+C:\Users\jeny_\Repositorios\ABD\ABD\ABD\bin\Debug\ABD.pdb
+C:\Users\jeny_\Repositorios\ABD\ABD\ABD\obj\Debug\ABD.csprojResolveAssemblyReference.cache
+C:\Users\jeny_\Repositorios\ABD\ABD\ABD\obj\Debug\ABD.Ventana1.resources
+C:\Users\jeny_\Repositorios\ABD\ABD\ABD\obj\Debug\ABD.Form2.resources
+C:\Users\jeny_\Repositorios\ABD\ABD\ABD\obj\Debug\ABD.Form3.resources
+C:\Users\jeny_\Repositorios\ABD\ABD\ABD\obj\Debug\ABD.Properties.Resources.resources
+C:\Users\jeny_\Repositorios\ABD\ABD\ABD\obj\Debug\ABD.csproj.GenerateResource.Cache

@@ -60,6 +60,7 @@ namespace ABD
         {
             Form2 v2 = new Form2();
             v2.Show();
+            v2.Borrar = true;
         }
 
         private void Ventana1_Load(object sender, EventArgs e)

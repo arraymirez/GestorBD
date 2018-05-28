@@ -129,6 +129,26 @@ namespace ABD
                     MessageBox.Show("No existe la base de datos");
                 }
             }
+            if(Borrar)
+            {
+                nombreDB = txtnombrebd.Text;
+                string bd = Application.StartupPath + @"\Gestor\" + nombreDB;
+
+                if (nombreDB != null)
+                {
+                    if (Directory.Exists(bd))
+                    {
+                        Directory.Delete(bd, true);
+                        MessageBox.Show("Base de Datos Borrada con Exito!");
+                    }
+                    else
+                        MessageBox.Show("La base de datos que intentas borrar, no existe!","Base de Datos Inexistente");
+                        
+                }
+                else
+                    MessageBox.Show("Ingrese un nombre de Base de Datos Existente.","Base de Datos Inexistente");
+
+            }
             
           
             

@@ -27,6 +27,7 @@ namespace ABD
         //VARIABLES PARA AÑADIR NUEVO CAMPO       
         int y = 60;
         int numCampo = 1;
+        bool CreandoTabla = false;
         TextBox[] campoNombre;
         ComboBox[] campoTipo;
         TextBox[] campoLongitud;
@@ -94,7 +95,7 @@ namespace ABD
             btnEliminar.Visible = false;
             panelConsultas.SendToBack();
             panelConsultas.Visible = false;
-
+            btnNombreTabla.Visible = false;
 
         }
 
@@ -106,12 +107,12 @@ namespace ABD
             txtNumCampos.ReadOnly = false;
             PanelCrearTablas.Visible = false;
         }
-
+       
 
 
         private void AgregarCampo_Click(object sender, EventArgs e)
         {
-
+            CreandoTabla = true;
 
             //campo tabla vacio
             if (string.IsNullOrEmpty(txtNomTabla.Text))
@@ -190,16 +191,23 @@ namespace ABD
 
         private void EliminarTabla(object sender, EventArgs e)
         {
+            if (CreandoTabla == false)
+            {
+                panelNomTab.Visible = true;
+                btnEliminar.Visible = true;
 
-            panelNomTab.Visible = true;
-            btnEliminar.Visible = true;
-
-            Limpiar();
-            //ocultar controles necesarios
-            PanelCrearTablas.Visible = false;
-            labelNumCampos.Visible = false;
-            txtNumCampos.Visible = false;
-            btnAgregarCampos.Visible = false;
+                Limpiar();
+                //ocultar controles necesarios
+                PanelCrearTablas.Visible = false;
+                labelNumCampos.Visible = false;
+                txtNumCampos.Visible = false;
+                btnAgregarCampos.Visible = false;
+                btnNombreTabla.Visible = false;
+                panelConsultas.Visible = false;
+            }
+            else
+                MessageBox.Show("Aun no terminas de Crear la Tabla");
+           
 
         }
 
@@ -210,33 +218,53 @@ namespace ABD
 
         private void btnGuardarTabla_Click(object sender, EventArgs e)
         {
+            CreandoTabla = false;
+            bool vacio = false;
             Directorios d = new Directorios();
             int inputs = Convert.ToInt32(txtNumCampos.Text);
             string[] lineas = new string[inputs];
+            
             for (int i = 0; i < inputs; i++)
             {
                 string cadena = campoNombre[i].Text + "|" + campoTipo[i].Text + "|" + campoLongitud[i].Text;
-                lineas[i] = cadena;
+                if (campoNombre[i] != null || campoTipo[i]!=null || campoLongitud[i]!=null )
+                {
+                    vacio = false;
+                    lineas[i] = cadena;
+                }
+                else
+                    vacio = true;
 
             }
-
+            if (vacio) { 
             d.CreaTabla(txtNomTabla.Text, bdusetxt.Text, lineas);
+            Limpiar();
+            
+            }
+            else
+                MessageBox.Show("Campos vacios");
 
         }
 
         private void btnUsarTabla_Click(object sender, EventArgs e)
         {
-            panelNomTab.Visible = true;
-            panelConsultas.Visible = true;
-            PanelCrearTablas.SendToBack();//manda el panel atras 
-            PanelCrearTablas.Visible = false;
+            if (CreandoTabla == false)
+            {
+                panelNomTab.Visible = true;
+                panelConsultas.Visible = true;
+                PanelCrearTablas.SendToBack();//manda el panel atras 
+                PanelCrearTablas.Visible = false;
 
 
-            txtNumCampos.Visible = false;
-            labelNumCampos.Visible = false;
-            btnAgregarCampos.Visible = false;
-            btnEliminar.Visible = false;
-            btnNombreTabla.Visible = true;
+                txtNumCampos.Visible = false;
+                labelNumCampos.Visible = false;
+                btnAgregarCampos.Visible = false;
+                btnEliminar.Visible = false;
+                btnNombreTabla.Visible = true;
+            }
+            else
+                MessageBox.Show("Aun no terminas de Crear la Tabla");
+            
 
 
         }
@@ -589,6 +617,18 @@ namespace ABD
         {
 
 
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelarCreacionTabla_Click(object sender, EventArgs e)
+        {
+            CreandoTabla = false;
+            Limpiar();
+           
         }
     }
 }

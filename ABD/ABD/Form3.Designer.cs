@@ -28,64 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("bd1");
             this.dirUso = new System.Windows.Forms.TreeView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.bdusetxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panelOpTablas = new System.Windows.Forms.Panel();
-            this.pictureBorrar = new System.Windows.Forms.PictureBox();
-            this.pictureAñadir = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnUsarTabla = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnEliminarTabla = new System.Windows.Forms.Button();
-            this.btnCrearTabla = new System.Windows.Forms.Button();
             this.PanelCrearTablas = new System.Windows.Forms.Panel();
             this.ScrollCrearTabla = new System.Windows.Forms.VScrollBar();
-            this.label5 = new System.Windows.Forms.Label();
             this.labelTamaño = new System.Windows.Forms.Label();
             this.labelTipoDato = new System.Windows.Forms.Label();
-            this.btnGuardarTabla = new System.Windows.Forms.Button();
             this.labelCampo = new System.Windows.Forms.Label();
             this.panelConsultas = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.queryCondicion = new System.Windows.Forms.TextBox();
+            this.queryTexto = new System.Windows.Forms.TextBox();
+            this.cmbOperacion = new System.Windows.Forms.ComboBox();
             this.queryResultados = new System.Windows.Forms.DataGridView();
             this.txtNumCampos = new System.Windows.Forms.TextBox();
             this.labelNumCampos = new System.Windows.Forms.Label();
             this.labelTabla = new System.Windows.Forms.Label();
             this.txtNomTabla = new System.Windows.Forms.TextBox();
             this.panelNomTab = new System.Windows.Forms.Panel();
+            this.tablaAtributos = new System.Windows.Forms.DataGridView();
+            this.nombresCampos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.infoCampos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mensajes = new System.Windows.Forms.ToolTip(this.components);
+            this.btnEjecutarQuery = new System.Windows.Forms.PictureBox();
             this.btnNombreTabla = new System.Windows.Forms.PictureBox();
             this.btnEliminar = new System.Windows.Forms.PictureBox();
             this.btnAgregarCampos = new System.Windows.Forms.PictureBox();
             this.pictureBD = new System.Windows.Forms.PictureBox();
-            this.tablaAtributos = new System.Windows.Forms.DataGridView();
-            this.nombresCampos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.infoCampos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbOperacion = new System.Windows.Forms.ComboBox();
-            this.queryTexto = new System.Windows.Forms.TextBox();
-            this.queryCondicion = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnEjecutarQuery = new System.Windows.Forms.PictureBox();
+            this.pictureBorrar = new System.Windows.Forms.PictureBox();
+            this.pictureAñadir = new System.Windows.Forms.PictureBox();
+            this.btnUsarTabla = new System.Windows.Forms.Button();
+            this.btnEliminarTabla = new System.Windows.Forms.Button();
+            this.btnCrearTabla = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnGuardarTabla = new System.Windows.Forms.Button();
+            this.btnCancelarCreacionTabla = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panelOpTablas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBorrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAñadir)).BeginInit();
             this.PanelCrearTablas.SuspendLayout();
             this.panelConsultas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.queryResultados)).BeginInit();
             this.panelNomTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaAtributos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEjecutarQuery)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNombreTabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregarCampos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBD)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaAtributos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEjecutarQuery)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBorrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAñadir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dirUso
@@ -109,18 +111,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(728, 23);
             this.panel2.TabIndex = 10;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = global::ABD.Properties.Resources.Entypo_2715_0__24;
-            this.pictureBox1.Location = new System.Drawing.Point(704, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 23);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.CerrarVentana);
             // 
             // label1
             // 
@@ -171,28 +161,6 @@
             this.panelOpTablas.Size = new System.Drawing.Size(608, 115);
             this.panelOpTablas.TabIndex = 16;
             // 
-            // pictureBorrar
-            // 
-            this.pictureBorrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
-            this.pictureBorrar.Image = global::ABD.Properties.Resources.Entypo_2796_0__24;
-            this.pictureBorrar.Location = new System.Drawing.Point(276, 60);
-            this.pictureBorrar.Name = "pictureBorrar";
-            this.pictureBorrar.Size = new System.Drawing.Size(24, 24);
-            this.pictureBorrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBorrar.TabIndex = 19;
-            this.pictureBorrar.TabStop = false;
-            // 
-            // pictureAñadir
-            // 
-            this.pictureAñadir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
-            this.pictureAñadir.Image = global::ABD.Properties.Resources.Entypo_2795_1__24;
-            this.pictureAñadir.Location = new System.Drawing.Point(120, 60);
-            this.pictureAñadir.Name = "pictureAñadir";
-            this.pictureAñadir.Size = new System.Drawing.Size(24, 24);
-            this.pictureAñadir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureAñadir.TabIndex = 18;
-            this.pictureAñadir.TabStop = false;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -203,21 +171,6 @@
             this.label4.Size = new System.Drawing.Size(78, 17);
             this.label4.TabIndex = 18;
             this.label4.Text = "Usar Tabla";
-            // 
-            // btnUsarTabla
-            // 
-            this.btnUsarTabla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
-            this.btnUsarTabla.BackgroundImage = global::ABD.Properties.Resources.Entypo_d83d_1__64;
-            this.btnUsarTabla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnUsarTabla.FlatAppearance.BorderSize = 0;
-            this.btnUsarTabla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsarTabla.ForeColor = System.Drawing.Color.White;
-            this.btnUsarTabla.Location = new System.Drawing.Point(351, 22);
-            this.btnUsarTabla.Name = "btnUsarTabla";
-            this.btnUsarTabla.Size = new System.Drawing.Size(86, 62);
-            this.btnUsarTabla.TabIndex = 17;
-            this.btnUsarTabla.UseVisualStyleBackColor = false;
-            this.btnUsarTabla.Click += new System.EventHandler(this.btnUsarTabla_Click);
             // 
             // label3
             // 
@@ -230,41 +183,11 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "Eliminar Tabla";
             // 
-            // btnEliminarTabla
-            // 
-            this.btnEliminarTabla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
-            this.btnEliminarTabla.BackgroundImage = global::ABD.Properties.Resources.Entypo_d83d_1__64;
-            this.btnEliminarTabla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnEliminarTabla.FlatAppearance.BorderSize = 0;
-            this.btnEliminarTabla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarTabla.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarTabla.Location = new System.Drawing.Point(214, 22);
-            this.btnEliminarTabla.Name = "btnEliminarTabla";
-            this.btnEliminarTabla.Size = new System.Drawing.Size(86, 62);
-            this.btnEliminarTabla.TabIndex = 15;
-            this.btnEliminarTabla.UseVisualStyleBackColor = false;
-            this.btnEliminarTabla.Click += new System.EventHandler(this.EliminarTabla);
-            // 
-            // btnCrearTabla
-            // 
-            this.btnCrearTabla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
-            this.btnCrearTabla.BackgroundImage = global::ABD.Properties.Resources.Entypo_d83d_1__64;
-            this.btnCrearTabla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnCrearTabla.FlatAppearance.BorderSize = 0;
-            this.btnCrearTabla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearTabla.ForeColor = System.Drawing.Color.White;
-            this.btnCrearTabla.Location = new System.Drawing.Point(58, 22);
-            this.btnCrearTabla.Name = "btnCrearTabla";
-            this.btnCrearTabla.Size = new System.Drawing.Size(86, 62);
-            this.btnCrearTabla.TabIndex = 14;
-            this.btnCrearTabla.UseVisualStyleBackColor = false;
-            this.btnCrearTabla.Click += new System.EventHandler(this.CrearTabla);
-            // 
             // PanelCrearTablas
             // 
             this.PanelCrearTablas.BackColor = System.Drawing.Color.PowderBlue;
+            this.PanelCrearTablas.Controls.Add(this.btnCancelarCreacionTabla);
             this.PanelCrearTablas.Controls.Add(this.ScrollCrearTabla);
-            this.PanelCrearTablas.Controls.Add(this.label5);
             this.PanelCrearTablas.Controls.Add(this.labelTamaño);
             this.PanelCrearTablas.Controls.Add(this.labelTipoDato);
             this.PanelCrearTablas.Controls.Add(this.btnGuardarTabla);
@@ -281,17 +204,6 @@
             this.ScrollCrearTabla.Name = "ScrollCrearTabla";
             this.ScrollCrearTabla.Size = new System.Drawing.Size(23, 219);
             this.ScrollCrearTabla.TabIndex = 28;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(460, 144);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 20);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "Guardar";
             // 
             // labelTamaño
             // 
@@ -312,21 +224,6 @@
             this.labelTipoDato.Size = new System.Drawing.Size(88, 20);
             this.labelTipoDato.TabIndex = 24;
             this.labelTipoDato.Text = "Tipo de Dato";
-            // 
-            // btnGuardarTabla
-            // 
-            this.btnGuardarTabla.BackColor = System.Drawing.Color.Transparent;
-            this.btnGuardarTabla.BackgroundImage = global::ABD.Properties.Resources.icons8_agregar_propiedad_64;
-            this.btnGuardarTabla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnGuardarTabla.FlatAppearance.BorderSize = 0;
-            this.btnGuardarTabla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarTabla.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarTabla.Location = new System.Drawing.Point(451, 70);
-            this.btnGuardarTabla.Name = "btnGuardarTabla";
-            this.btnGuardarTabla.Size = new System.Drawing.Size(86, 62);
-            this.btnGuardarTabla.TabIndex = 22;
-            this.btnGuardarTabla.UseVisualStyleBackColor = false;
-            this.btnGuardarTabla.Click += new System.EventHandler(this.btnGuardarTabla_Click);
             // 
             // labelCampo
             // 
@@ -353,6 +250,64 @@
             this.panelConsultas.Size = new System.Drawing.Size(608, 219);
             this.panelConsultas.TabIndex = 31;
             this.panelConsultas.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(407, 12);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 13);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Condicion:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(137, 12);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(44, 13);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Query:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(22, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(71, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Tipo query:";
+            // 
+            // queryCondicion
+            // 
+            this.queryCondicion.Location = new System.Drawing.Point(399, 35);
+            this.queryCondicion.Name = "queryCondicion";
+            this.queryCondicion.Size = new System.Drawing.Size(183, 20);
+            this.queryCondicion.TabIndex = 5;
+            // 
+            // queryTexto
+            // 
+            this.queryTexto.Location = new System.Drawing.Point(131, 35);
+            this.queryTexto.Name = "queryTexto";
+            this.queryTexto.Size = new System.Drawing.Size(245, 20);
+            this.queryTexto.TabIndex = 4;
+            this.queryTexto.Text = "*";
+            // 
+            // cmbOperacion
+            // 
+            this.cmbOperacion.FormattingEnabled = true;
+            this.cmbOperacion.Items.AddRange(new object[] {
+            "Insertar",
+            "Actualizar",
+            "Buscar",
+            "Eliminar"});
+            this.cmbOperacion.Location = new System.Drawing.Point(13, 34);
+            this.cmbOperacion.Name = "cmbOperacion";
+            this.cmbOperacion.Size = new System.Drawing.Size(101, 21);
+            this.cmbOperacion.TabIndex = 3;
             // 
             // queryResultados
             // 
@@ -420,54 +375,6 @@
             this.panelNomTab.TabIndex = 30;
             this.panelNomTab.Visible = false;
             // 
-            // btnNombreTabla
-            // 
-            this.btnNombreTabla.BackColor = System.Drawing.Color.Transparent;
-            this.btnNombreTabla.Image = global::ABD.Properties.Resources.FontAwesome_f00c_0__32;
-            this.btnNombreTabla.Location = new System.Drawing.Point(351, 16);
-            this.btnNombreTabla.Name = "btnNombreTabla";
-            this.btnNombreTabla.Size = new System.Drawing.Size(25, 23);
-            this.btnNombreTabla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.btnNombreTabla.TabIndex = 31;
-            this.btnNombreTabla.TabStop = false;
-            this.btnNombreTabla.Visible = false;
-            this.btnNombreTabla.Click += new System.EventHandler(this.btnNombreTabla_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
-            this.btnEliminar.Image = global::ABD.Properties.Resources.Entypo_2796_0__241;
-            this.btnEliminar.Location = new System.Drawing.Point(171, 13);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(24, 24);
-            this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.btnEliminar.TabIndex = 30;
-            this.btnEliminar.TabStop = false;
-            this.btnEliminar.Visible = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnAgregarCampos
-            // 
-            this.btnAgregarCampos.BackColor = System.Drawing.Color.Transparent;
-            this.btnAgregarCampos.Image = global::ABD.Properties.Resources.Entypo_2795_0__24;
-            this.btnAgregarCampos.Location = new System.Drawing.Point(315, 15);
-            this.btnAgregarCampos.Name = "btnAgregarCampos";
-            this.btnAgregarCampos.Size = new System.Drawing.Size(24, 24);
-            this.btnAgregarCampos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.btnAgregarCampos.TabIndex = 19;
-            this.btnAgregarCampos.TabStop = false;
-            this.btnAgregarCampos.Click += new System.EventHandler(this.AgregarCampo_Click);
-            // 
-            // pictureBD
-            // 
-            this.pictureBD.Image = global::ABD.Properties.Resources.Entypo_e754_0__64;
-            this.pictureBD.Location = new System.Drawing.Point(534, 46);
-            this.pictureBD.Name = "pictureBD";
-            this.pictureBD.Size = new System.Drawing.Size(64, 64);
-            this.pictureBD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBD.TabIndex = 17;
-            this.pictureBD.TabStop = false;
-            // 
             // tablaAtributos
             // 
             this.tablaAtributos.AllowUserToAddRows = false;
@@ -496,64 +403,6 @@
             this.infoCampos.ReadOnly = true;
             this.infoCampos.Width = 50;
             // 
-            // cmbOperacion
-            // 
-            this.cmbOperacion.FormattingEnabled = true;
-            this.cmbOperacion.Items.AddRange(new object[] {
-            "Insertar",
-            "Actualizar",
-            "Buscar",
-            "Eliminar"});
-            this.cmbOperacion.Location = new System.Drawing.Point(13, 34);
-            this.cmbOperacion.Name = "cmbOperacion";
-            this.cmbOperacion.Size = new System.Drawing.Size(101, 21);
-            this.cmbOperacion.TabIndex = 3;
-            // 
-            // queryTexto
-            // 
-            this.queryTexto.Location = new System.Drawing.Point(131, 35);
-            this.queryTexto.Name = "queryTexto";
-            this.queryTexto.Size = new System.Drawing.Size(245, 20);
-            this.queryTexto.TabIndex = 4;
-            this.queryTexto.Text = "*";
-            // 
-            // queryCondicion
-            // 
-            this.queryCondicion.Location = new System.Drawing.Point(399, 35);
-            this.queryCondicion.Name = "queryCondicion";
-            this.queryCondicion.Size = new System.Drawing.Size(183, 20);
-            this.queryCondicion.TabIndex = 5;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(22, 12);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Tipo query:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(137, 12);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Query:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(407, 12);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 13);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Condicion:";
-            // 
             // btnEjecutarQuery
             // 
             this.btnEjecutarQuery.Image = global::ABD.Properties.Resources.Entypo_e754_0__64;
@@ -563,8 +412,177 @@
             this.btnEjecutarQuery.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.btnEjecutarQuery.TabIndex = 32;
             this.btnEjecutarQuery.TabStop = false;
+            this.Mensajes.SetToolTip(this.btnEjecutarQuery, "Ejecutar Query");
             this.btnEjecutarQuery.Visible = false;
             this.btnEjecutarQuery.Click += new System.EventHandler(this.btnEjecutarQuery_Click);
+            // 
+            // btnNombreTabla
+            // 
+            this.btnNombreTabla.BackColor = System.Drawing.Color.Transparent;
+            this.btnNombreTabla.Image = global::ABD.Properties.Resources.FontAwesome_f00c_0__32;
+            this.btnNombreTabla.Location = new System.Drawing.Point(351, 16);
+            this.btnNombreTabla.Name = "btnNombreTabla";
+            this.btnNombreTabla.Size = new System.Drawing.Size(25, 23);
+            this.btnNombreTabla.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnNombreTabla.TabIndex = 31;
+            this.btnNombreTabla.TabStop = false;
+            this.Mensajes.SetToolTip(this.btnNombreTabla, "Usar Tabla");
+            this.btnNombreTabla.Visible = false;
+            this.btnNombreTabla.Click += new System.EventHandler(this.btnNombreTabla_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Transparent;
+            this.btnEliminar.Image = global::ABD.Properties.Resources.Entypo_2796_0__241;
+            this.btnEliminar.Location = new System.Drawing.Point(171, 13);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(24, 24);
+            this.btnEliminar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnEliminar.TabIndex = 30;
+            this.btnEliminar.TabStop = false;
+            this.Mensajes.SetToolTip(this.btnEliminar, "Eliminar Tabla");
+            this.btnEliminar.Visible = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnAgregarCampos
+            // 
+            this.btnAgregarCampos.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregarCampos.Image = global::ABD.Properties.Resources.Entypo_2795_0__24;
+            this.btnAgregarCampos.Location = new System.Drawing.Point(315, 15);
+            this.btnAgregarCampos.Name = "btnAgregarCampos";
+            this.btnAgregarCampos.Size = new System.Drawing.Size(24, 24);
+            this.btnAgregarCampos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.btnAgregarCampos.TabIndex = 19;
+            this.btnAgregarCampos.TabStop = false;
+            this.Mensajes.SetToolTip(this.btnAgregarCampos, "Añadir Campos");
+            this.btnAgregarCampos.Click += new System.EventHandler(this.AgregarCampo_Click);
+            // 
+            // pictureBD
+            // 
+            this.pictureBD.Image = global::ABD.Properties.Resources.Entypo_e754_0__64;
+            this.pictureBD.Location = new System.Drawing.Point(534, 46);
+            this.pictureBD.Name = "pictureBD";
+            this.pictureBD.Size = new System.Drawing.Size(64, 64);
+            this.pictureBD.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBD.TabIndex = 17;
+            this.pictureBD.TabStop = false;
+            // 
+            // pictureBorrar
+            // 
+            this.pictureBorrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
+            this.pictureBorrar.Image = global::ABD.Properties.Resources.Entypo_2796_0__24;
+            this.pictureBorrar.Location = new System.Drawing.Point(276, 60);
+            this.pictureBorrar.Name = "pictureBorrar";
+            this.pictureBorrar.Size = new System.Drawing.Size(24, 24);
+            this.pictureBorrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBorrar.TabIndex = 19;
+            this.pictureBorrar.TabStop = false;
+            // 
+            // pictureAñadir
+            // 
+            this.pictureAñadir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
+            this.pictureAñadir.Image = global::ABD.Properties.Resources.Entypo_2795_1__24;
+            this.pictureAñadir.Location = new System.Drawing.Point(120, 60);
+            this.pictureAñadir.Name = "pictureAñadir";
+            this.pictureAñadir.Size = new System.Drawing.Size(24, 24);
+            this.pictureAñadir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureAñadir.TabIndex = 18;
+            this.pictureAñadir.TabStop = false;
+            // 
+            // btnUsarTabla
+            // 
+            this.btnUsarTabla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
+            this.btnUsarTabla.BackgroundImage = global::ABD.Properties.Resources.Entypo_d83d_1__64;
+            this.btnUsarTabla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnUsarTabla.FlatAppearance.BorderSize = 0;
+            this.btnUsarTabla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsarTabla.ForeColor = System.Drawing.Color.White;
+            this.btnUsarTabla.Location = new System.Drawing.Point(351, 22);
+            this.btnUsarTabla.Name = "btnUsarTabla";
+            this.btnUsarTabla.Size = new System.Drawing.Size(86, 62);
+            this.btnUsarTabla.TabIndex = 17;
+            this.btnUsarTabla.UseVisualStyleBackColor = false;
+            this.btnUsarTabla.Click += new System.EventHandler(this.btnUsarTabla_Click);
+            // 
+            // btnEliminarTabla
+            // 
+            this.btnEliminarTabla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
+            this.btnEliminarTabla.BackgroundImage = global::ABD.Properties.Resources.Entypo_d83d_1__64;
+            this.btnEliminarTabla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnEliminarTabla.FlatAppearance.BorderSize = 0;
+            this.btnEliminarTabla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarTabla.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarTabla.Location = new System.Drawing.Point(214, 22);
+            this.btnEliminarTabla.Name = "btnEliminarTabla";
+            this.btnEliminarTabla.Size = new System.Drawing.Size(86, 62);
+            this.btnEliminarTabla.TabIndex = 15;
+            this.btnEliminarTabla.UseVisualStyleBackColor = false;
+            this.btnEliminarTabla.Click += new System.EventHandler(this.EliminarTabla);
+            // 
+            // btnCrearTabla
+            // 
+            this.btnCrearTabla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(155)))), ((int)(((byte)(255)))));
+            this.btnCrearTabla.BackgroundImage = global::ABD.Properties.Resources.Entypo_d83d_1__64;
+            this.btnCrearTabla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCrearTabla.FlatAppearance.BorderSize = 0;
+            this.btnCrearTabla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrearTabla.ForeColor = System.Drawing.Color.White;
+            this.btnCrearTabla.Location = new System.Drawing.Point(58, 22);
+            this.btnCrearTabla.Name = "btnCrearTabla";
+            this.btnCrearTabla.Size = new System.Drawing.Size(86, 62);
+            this.btnCrearTabla.TabIndex = 14;
+            this.btnCrearTabla.UseVisualStyleBackColor = false;
+            this.btnCrearTabla.Click += new System.EventHandler(this.CrearTabla);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox1.Image = global::ABD.Properties.Resources.Entypo_2715_0__24;
+            this.pictureBox1.Location = new System.Drawing.Point(704, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(24, 23);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.CerrarVentana);
+            // 
+            // btnGuardarTabla
+            // 
+            this.btnGuardarTabla.BackColor = System.Drawing.Color.Transparent;
+            this.btnGuardarTabla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnGuardarTabla.FlatAppearance.BorderSize = 0;
+            this.btnGuardarTabla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardarTabla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarTabla.ForeColor = System.Drawing.Color.Black;
+            this.btnGuardarTabla.Image = global::ABD.Properties.Resources.linea_b5_0__48;
+            this.btnGuardarTabla.Location = new System.Drawing.Point(388, 76);
+            this.btnGuardarTabla.Name = "btnGuardarTabla";
+            this.btnGuardarTabla.Size = new System.Drawing.Size(86, 79);
+            this.btnGuardarTabla.TabIndex = 22;
+            this.btnGuardarTabla.Text = "Guardar";
+            this.btnGuardarTabla.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Mensajes.SetToolTip(this.btnGuardarTabla, "Guardar Tabla");
+            this.btnGuardarTabla.UseVisualStyleBackColor = false;
+            this.btnGuardarTabla.Click += new System.EventHandler(this.btnGuardarTabla_Click);
+            // 
+            // btnCancelarCreacionTabla
+            // 
+            this.btnCancelarCreacionTabla.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelarCreacionTabla.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnCancelarCreacionTabla.FlatAppearance.BorderSize = 0;
+            this.btnCancelarCreacionTabla.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelarCreacionTabla.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarCreacionTabla.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelarCreacionTabla.Image = global::ABD.Properties.Resources.linea_b6_0__48;
+            this.btnCancelarCreacionTabla.Location = new System.Drawing.Point(480, 76);
+            this.btnCancelarCreacionTabla.Name = "btnCancelarCreacionTabla";
+            this.btnCancelarCreacionTabla.Size = new System.Drawing.Size(86, 79);
+            this.btnCancelarCreacionTabla.TabIndex = 29;
+            this.btnCancelarCreacionTabla.Text = "Cancelar";
+            this.btnCancelarCreacionTabla.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Mensajes.SetToolTip(this.btnCancelarCreacionTabla, "Guardar Tabla");
+            this.btnCancelarCreacionTabla.UseVisualStyleBackColor = false;
+            this.btnCancelarCreacionTabla.Click += new System.EventHandler(this.btnCancelarCreacionTabla_Click);
             // 
             // Form3
             // 
@@ -580,32 +598,31 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.dirUso);
-            this.Controls.Add(this.panelConsultas);
             this.Controls.Add(this.PanelCrearTablas);
+            this.Controls.Add(this.panelConsultas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form3";
             this.Text = "VentanaTablas";
             this.Load += new System.EventHandler(this.Form3_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panelOpTablas.ResumeLayout(false);
             this.panelOpTablas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBorrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureAñadir)).EndInit();
             this.PanelCrearTablas.ResumeLayout(false);
-            this.PanelCrearTablas.PerformLayout();
             this.panelConsultas.ResumeLayout(false);
             this.panelConsultas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.queryResultados)).EndInit();
             this.panelNomTab.ResumeLayout(false);
             this.panelNomTab.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaAtributos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnEjecutarQuery)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnNombreTabla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnEliminar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAgregarCampos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBD)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaAtributos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnEjecutarQuery)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBorrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureAñadir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -636,7 +653,6 @@
         public System.Windows.Forms.TextBox txtNomTabla;
         private System.Windows.Forms.Label labelTamaño;
         private System.Windows.Forms.Label labelTipoDato;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNumCampos;
         private System.Windows.Forms.Label labelNumCampos;
         private System.Windows.Forms.Panel panelNomTab;
@@ -655,5 +671,7 @@
         private System.Windows.Forms.TextBox queryTexto;
         private System.Windows.Forms.ComboBox cmbOperacion;
         private System.Windows.Forms.PictureBox btnEjecutarQuery;
+        private System.Windows.Forms.ToolTip Mensajes;
+        private System.Windows.Forms.Button btnCancelarCreacionTabla;
     }
 }
