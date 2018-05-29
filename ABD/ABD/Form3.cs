@@ -79,6 +79,8 @@ namespace ABD
         private void CerrarVentana(object sender, EventArgs e)
         {
             this.Close();
+            Ventana1 v = new Ventana1();
+            v.Show();
         }
 
         private void CrearTabla(object sender, EventArgs e)
@@ -213,7 +215,22 @@ namespace ABD
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            string tablaStr = Application.StartupPath + @"\Gestor\" + bdusetxt.Text + "\\" + txtNomTabla.Text.Trim() + ".str";
+            string tablaData = Application.StartupPath + @"\Gestor\" + bdusetxt.Text + "\\" + txtNomTabla.Text.Trim() + ".data";
+            try
+            {
 
+            File.Delete(tablaStr);
+            File.Delete(tablaData);
+                MessageBox.Show("Tabla Eliminado con exito.");
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show(f.Message);
+            
+            }
+
+            
         }
 
         private void btnGuardarTabla_Click(object sender, EventArgs e)
@@ -236,7 +253,7 @@ namespace ABD
                     vacio = true;
 
             }
-            if (vacio) { 
+            if (!vacio) { 
             d.CreaTabla(txtNomTabla.Text, bdusetxt.Text, lineas);
             Limpiar();
             
@@ -337,7 +354,7 @@ namespace ABD
                             else if (tipo.Split(',')[0] == "decimal")
                             {
                                 Regex numeros = new Regex(@"[0-9]+");
-                                if (query.Split(',')[i].Split('.').Count() > 2)
+                                if (query.Split(',')[i].Split('.').Count() != 2)
                                 {
                                     error = true;
                                     break;
@@ -578,26 +595,75 @@ namespace ABD
                     int columnas = 0;
                     queryResultados.Columns.Clear();
                     queryResultados.Rows.Clear();
-                    if (atributos.Count > 0) columnas=atributos[0].Split('|').Count();
+                    if (atributos.Count > 0) columnas = atributos[0].Split('|').Count();
                     queryResultados.ColumnCount = columnas;
                     for (int i = 0; i < columnas; i++)
                     {
                         queryResultados.Columns[i].Name = tablaAtributos.Rows[i].Cells[0].Value.ToString();
-                           
+
                     }
                     foreach (var item in atributos)
                     {
                         var row = new DataGridViewRow();
                         for (int k = 0; k < item.Split('|').Count(); k++)
                         {
+                            if (queryCondicion.Text != "")
+                            {
+                                if (item.Contains(queryCondicion.Text.Split('=')[1]))
+                                {
+                                    row.Cells.Add(new DataGridViewTextBoxCell { Value = item.Split('|')[k].ToString() });
+                                }
+                            }
+                            else {
                             row.Cells.Add(new DataGridViewTextBoxCell { Value = item.Split('|')[k].ToString() });
-
+                            }
                         }
                         queryResultados.Rows.Add(row);
                     }
 
 
                 }
+                else {
+                    int camposBuscados = campos.Split(',').Count();
+
+                    queryResultados.Columns.Clear();
+                    queryResultados.Rows.Clear();
+                    queryResultados.ColumnCount = camposBuscados;
+                    string[] datos = File.ReadAllLines(datosTabla);
+                    int cont = 0;
+                    for (int i = 0; i < datos.Length; i++)
+                    {
+                        var row = new DataGridViewRow();
+                            cont = 0;
+                        for (int b = 0; b < datos[i].Split('|').Count(); b++)
+                        {
+                            for (int k = 0; k < campos.Split(',').Count(); k++)
+                            {
+                                
+                                if (campos.Split(',')[k].ToString() == tablaAtributos.Rows[b].Cells[0].Value.ToString())
+                                {
+                                queryResultados.Columns[cont++].Name = tablaAtributos.Rows[b].Cells[0].Value.ToString();
+                                    if (queryCondicion.Text != "")
+                                    {
+                                        if (datos[i].Contains(queryCondicion.Text.Split('=')[1])) {
+                                            row.Cells.Add(new DataGridViewTextBoxCell { Value = datos[i].Split('|')[b].ToString() });
+                                        }
+
+                                    }
+                                    else {
+
+                                    row.Cells.Add(new DataGridViewTextBoxCell { Value = datos[i].Split('|')[b].ToString() });
+                                    }
+                               
+                                }
+                         }
+
+                        }
+                         queryResultados.Rows.Add(row);
+
+                    }
+                }
+
             }
             catch (Exception e)
             {
@@ -608,8 +674,44 @@ namespace ABD
             
         }
 
-        void eliminarDatos(string borrar) {
+        void eliminarDatos(string borrar)
+        {
+            string datosTabla = Application.StartupPath + @"\Gestor\" + bdusetxt.Text + "\\" + txtNomTabla.Text.Trim() + ".data";
+            string [] datos=File.ReadAllLines(datosTabla);
+            string campo = queryCondicion.Text.Split('=')[0];
+            string valor = queryCondicion.Text.Split('=')[1];
+            int columna = 0;
+            int longitud = datos.Length;
+            string[] temp = new string[longitud];
+            for (int i = 0; i < tablaAtributos.RowCount; i++)
+            {
+                if (campo == tablaAtributos.Rows[i].Cells[0].Value.ToString())
+                {
+                    columna = i;
+                    break;
+                }
 
+            }
+            
+            using (var sr = new StreamReader(datosTabla))
+            {
+                // lectura
+                int row = 0;
+                // escritura
+                    string linea;
+                    while ((linea = sr.ReadLine()) != null)
+                    {
+                  
+                    if (!linea.Contains(valor))
+                      {
+                        temp[row++] = linea;
+                           
+                     }
+                }
+            }
+
+            File.WriteAllLines(datosTabla, temp);
+            MessageBox.Show("Registro eliminado correctamente");
 
         }
 
@@ -629,6 +731,44 @@ namespace ABD
             CreandoTabla = false;
             Limpiar();
            
+        }
+
+        //arbol
+        //Recibe el treeview al que se desean actualizar los archivos
+        public void ListaDirectorio(TreeView dir)
+        {
+
+            dir.Nodes.Clear();
+            var raiz = new DirectoryInfo(Application.StartupPath + @"\Gestor");
+            string rutaRaiz = Application.StartupPath + @"\Gestor";
+            if (!Directory.Exists(rutaRaiz)) { Directory.CreateDirectory(rutaRaiz); }
+            dir.Nodes.Add(ActualizarRaiz(raiz));
+
+        }
+        public static TreeNode ActualizarRaiz(DirectoryInfo dir)
+        {
+
+            var carpeta = new TreeNode(dir.Name);
+            foreach (var carp in dir.GetDirectories())
+            {
+                carpeta.Nodes.Add(ActualizarRaiz(carp));
+            }
+            foreach (var archivo in dir.GetFiles())
+            {
+                carpeta.Nodes.Add(new TreeNode(archivo.Name));
+            }
+
+            return carpeta;
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            ListaDirectorio(dirUso);
+        }
+
+        private void cmbOperacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

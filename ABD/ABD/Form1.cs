@@ -40,6 +40,8 @@ namespace ABD
         private void CerrarVentana_Click(object sender, EventArgs e)
         {
             this.Close();
+            Application.Exit();
+           
         }
         /*MUESTRA  USAR BD*/
         private void UsarBD_Click(object sender, EventArgs e)

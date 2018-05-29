@@ -198,6 +198,7 @@ namespace ABD
                 }
                 else
                 {
+                  
                     File.WriteAllLines(tabla, campos);
                     File.CreateText(tablaData);
                     MessageBox.Show("Tabla creada");
