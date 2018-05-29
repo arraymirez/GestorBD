@@ -292,6 +292,7 @@ namespace ABD
         {
             Directorios dir = new Directorios(); tablaAtributos.Rows.Clear();
             List<string> campos = dir.LeerAtributosTabla(nombreTabla, bdusetxt.Text);
+            if(campos!=null)
             foreach (string linea in campos)
             {
 
@@ -306,8 +307,11 @@ namespace ABD
 
         private void btnNombreTabla_Click(object sender, EventArgs e)
         {
+            if (txtNomTabla.Text.Trim() != "") {
+
             obtenerAtributos(txtNomTabla.Text.Trim());
             btnEjecutarQuery.Visible = true;
+            }
         }
 
         private void btnEjecutarQuery_Click(object sender, EventArgs e)
@@ -465,54 +469,36 @@ namespace ABD
                     bool encontrado1 = true;
 
 
-                    for (int i = 0; i < query.Split(',').Count(); i++)
+                for (int i = 0; i < tablaAtributos.RowCount; i++)
+                {
+                    //se obtiene el tipo de dato del atributo.
+                    string tipo = tablaAtributos.Rows[i].Cells[1].Value.ToString();
+                    for (int j = 0; j < query.Split(',').Count(); j++)
                     {
-                        //se obtiene el tipo de dato del atributo.
-                        string tipo = tablaAtributos.Rows[i].Cells[1].Value.ToString();
 
 
-                        for (int j = 0; j < tablaAtributos.RowCount; j++)
-                        {
-                            string nombreCampo = tablaAtributos.Rows[j].Cells[0].Value.ToString();
+                            string nombreCampo = tablaAtributos.Rows[i].Cells[0].Value.ToString();
 
-                            if (query.Split(',')[i].Split('=')[0].ToUpper() == nombreCampo.ToUpper())
+                            if (query.Split(',')[j].Split('=')[0].ToUpper() == nombreCampo.ToUpper())
                             {
                                 encontrado1 = true; break;
                             }
                             else { encontrado1 = false; }
-                        }
-                        if (encontrado1)
-                        {
-
-                            if (tipo.Split(',')[0] == "entero")
+                     }
+                    if (encontrado1)
+                    {
+                            for (int v = 0; v < query.Split(',').Count(); v++)
                             {
-                                Regex numeros = new Regex(@"[0-9]+");
-                                if (numeros.Match(query.Split(',')[i].Split('=')[1]).Success && query.Split(',')[i].Split('=')[1].Length <= Convert.ToInt32(tipo.Split(',')[1]))
-                                {
-                                    query.Split(',')[i] += (i == tablaAtributos.RowCount - 1) ? "" : "|";
-                                    row1 += query.Split(',')[i];
-                                }
-                                else
-                                {
-                                    error1 = true;
-                                    break;
-                                }
-                            }
-                            else if (tipo.Split(',')[0] == "decimal")
-                            {
-                                Regex numeros = new Regex(@"[0-9]+");
-                                if (query.Split(',')[i].Split('=')[1].Split('.').Count() > 2)
-                                {
-                                    error1 = true;
-                                    break;
 
-                                }
-                                else
+
+                                if (tipo.Split(',')[0] == "entero")
                                 {
-                                    if ((numeros.Match(query.Split(',')[i].Split('=')[1].Split('.')[0]).Success && numeros.Match(query.Split(',')[i].Split('=')[1].Split('.')[1]).Success) && query.Split(',')[i].Split('=')[1].Split('.').Length <= Convert.ToInt32(tipo.Split(',')[1]))
+                                    Regex numeros = new Regex(@"[0-9]+");
+                                    if (numeros.Match(query.Split(',')[v].Split('=')[1]).Success && query.Split(',')[v].Split('=')[1].Length <= Convert.ToInt32(tipo.Split(',')[1]))
                                     {
-                                        query.Split(',')[i].Split('=')[1] += (i == tablaAtributos.RowCount - 1) ? "" : "|";
-                                        row1 += query.Split(',')[i].Split('=')[1];
+                                        
+                                        row1 += query.Split(',')[v] +(( v == query.Split(',').Count() - 1) ? "" : "|");
+                                        error1 = false;
                                     }
                                     else
                                     {
@@ -520,30 +506,54 @@ namespace ABD
                                         break;
                                     }
                                 }
-                            }
-                            else
-                            {
-                                Regex texto = new Regex(@"[A-Za-z0-9-_]+");
-
-                                if (texto.Match(query.Split(',')[i]).Success && query.Split(',').Length <= Convert.ToInt32(tipo.Split(',')[1]))
+                                else if (tipo.Split(',')[0] == "decimal")
                                 {
-                                    query.Split(',')[i] += (i == tablaAtributos.RowCount - 1) ? "" : "|";
-                                    row1 += query.Split(',')[i];
+                                    Regex numeros = new Regex(@"[0-9]+");
+                                    if (query.Split(',')[v].Split('=')[1].Split('.').Count() != 2)
+                                    {
+                                        error1 = true;
+                                        break;
+
+                                    }
+                                    else
+                                    {
+                                        if ((numeros.Match(query.Split(',')[v].Split('=')[1].Split('.')[0]).Success && numeros.Match(query.Split(',')[v].Split('=')[1].Split('.')[1]).Success) && query.Split(',')[v].Split('=')[1].Split('.').Length <= Convert.ToInt32(tipo.Split(',')[1]))
+                                        {
+                                            
+                                            row1 += query.Split(',')[v].Split('=')[1] +( (v == query.Split(',').Count() - 1) ? "" : "|");
+                                            error1 = false;
+                                        }
+                                        else
+                                        {
+                                            error1 = true;
+                                            break;
+                                        }
+                                    }
                                 }
                                 else
                                 {
-                                    error1 = true;
-                                    break;
-                                }
+                                    Regex texto = new Regex(@"[A-Za-z0-9-_]+");
 
+                                    if (texto.Match(query.Split(',')[v]).Success && query.Split(',').Length <= Convert.ToInt32(tipo.Split(',')[1]))
+                                    {
+                                       
+                                        row1 += query.Split(',')[v] +( (v == query.Split(',').Count() - 1) ? "" : "|");
+                                        error1 = false;
+                                    }
+                                    else
+                                    {
+                                        error1 = true;
+                                        break;
+                                    }
+
+                                }
                             }
+                           
                         }
-                        else {
-                            error1 = true; break;
-                        }
+                     
                     }
                     if (!error1)
-                    {
+                    {//simon si procede
                         actualizarDatos(row1);
 
                     }
@@ -590,11 +600,12 @@ namespace ABD
             {
                 string datosTabla = Application.StartupPath + @"\Gestor\" + bdusetxt.Text + "\\" + txtNomTabla.Text.Trim() + ".data";
                 if (campos == "*")
-                {
-                    List<string> atributos = File.ReadAllLines(datosTabla).ToList();
-                    int columnas = 0;
+                {  
+                    List<string> atributos = File.ReadAllLines(datosTabla).ToList();//lo que esta en el archivo
+                    int columnas = 0;//tamaño del datagrid.
                     queryResultados.Columns.Clear();
                     queryResultados.Rows.Clear();
+
                     if (atributos.Count > 0) columnas = atributos[0].Split('|').Count();
                     queryResultados.ColumnCount = columnas;
                     for (int i = 0; i < columnas; i++)
@@ -604,12 +615,23 @@ namespace ABD
                     }
                     foreach (var item in atributos)
                     {
-                        var row = new DataGridViewRow();
+                        var row = new DataGridViewRow();//renglon a agregar
                         for (int k = 0; k < item.Split('|').Count(); k++)
                         {
-                            if (queryCondicion.Text != "")
+                            if (queryCondicion.Text != "")//si tiene condicion
                             {
-                                if (item.Contains(queryCondicion.Text.Split('=')[1]))
+                                int indice = 0;
+                                for (int c = 0; c < tablaAtributos.RowCount; c++)
+                                {
+                                    if (queryCondicion.Text.Split('=')[0] == tablaAtributos.Rows[c].Cells[0].Value.ToString())
+                                    {
+                                        indice = c;
+                                        break;
+                                    }
+
+                                }
+
+                                if (item.Split('|')[indice].Contains(queryCondicion.Text.Split('=')[1]))
                                 {
                                     row.Cells.Add(new DataGridViewTextBoxCell { Value = item.Split('|')[k].ToString() });
                                 }
@@ -645,7 +667,8 @@ namespace ABD
                                 queryResultados.Columns[cont++].Name = tablaAtributos.Rows[b].Cells[0].Value.ToString();
                                     if (queryCondicion.Text != "")
                                     {
-                                        if (datos[i].Contains(queryCondicion.Text.Split('=')[1])) {
+                                        if (datos[i].Contains(queryCondicion.Text.Split('=')[1]))
+                                        {
                                             row.Cells.Add(new DataGridViewTextBoxCell { Value = datos[i].Split('|')[b].ToString() });
                                         }
 
@@ -662,8 +685,18 @@ namespace ABD
                          queryResultados.Rows.Add(row);
 
                     }
+                    
                 }
-
+                //limpia
+                inicio:
+                foreach (DataGridViewRow item in queryResultados.Rows)
+                {
+                    if (item.Cells[0].Value == null)
+                    {
+                        queryResultados.Rows.Remove(item);
+                        goto inicio;
+                    }
+                }
             }
             catch (Exception e)
             {
@@ -701,12 +734,16 @@ namespace ABD
                     string linea;
                     while ((linea = sr.ReadLine()) != null)
                     {
-                  
+
                     if (!linea.Contains(valor))
-                      {
+                    {
                         temp[row++] = linea;
-                           
-                     }
+
+                    }
+                    List<string> aux = temp.ToList<string>();
+                    aux.RemoveAll(b => string.IsNullOrEmpty(b));
+                    temp = aux.ToArray();
+                    
                 }
             }
 
@@ -715,10 +752,73 @@ namespace ABD
 
         }
 
-        void actualizarDatos(string linea)
+        void actualizarDatos(string linea)//valores
         {
+            try
+            {
+
+            string archivo = Application.StartupPath + @"\Gestor\" + bdusetxt.Text + "\\" + txtNomTabla.Text.Trim() + ".data";
+            string[] datos = File.ReadAllLines(archivo);
+            string condicion = queryCondicion.Text;
+            for (int i = 0; i < linea.Split('|').Count() && linea.Split('|')[i] != ""; i++)//obtener los campos que se modificaran
+            {
+                string campo = linea.Split('|')[i].Split('=')[0];
+                string valor = linea.Split('|')[i].Split('=')[1];
+                int columna = 0;
+                for (int k = 0; k < tablaAtributos.RowCount; k++)
+                {
+                    if (tablaAtributos.Rows[k].Cells[0].Value.ToString() == campo) {
+                        columna = k;
+                        break;
+                    }
+                }
+                
+                for (int j = 0; j < datos.Length; j++)
+                {
+                    if (condicion != "")
+                    {
+                        string campoCondicion = condicion.Split('=')[0];
+                        string valorCondicion = condicion.Split('=')[1];
+                        int columnaCondicion = 0;
+                        for (int c = 0; c < tablaAtributos.RowCount; c++)
+                        {
+                            if (tablaAtributos.Rows[c].Cells[0].Value.ToString() == campoCondicion)
+                            {
+                                columnaCondicion = c;
+                                break;
+                            }
+                        }
+
+                        if (datos[j].Split('|')[columnaCondicion] == valorCondicion)
+                        {
+                                string[] temp = datos[j].Split('|');
+                                string reemplazo = "";
+                                for (int x = 0; x < temp.Length; x++)
+                                {
+                                    if(x==columna)reemplazo+=valor+((x==temp.Length-1)?"":"|");
+                                   else reemplazo += temp[x] + ((x == temp.Length - 1) ? "" : "|");
+                                }
+                                datos[j] = reemplazo;
+                        }
 
 
+                    }
+                    else
+                    {
+                    datos[j].Split('|')[columna] = valor;
+                    }
+                }
+                
+            }
+
+            File.WriteAllLines(archivo,datos);
+
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void label9_Click(object sender, EventArgs e)
