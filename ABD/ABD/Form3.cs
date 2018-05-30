@@ -103,6 +103,23 @@ namespace ABD
 
         private void Limpiar()
         {
+            int total = (txtNumCampos.Text!="")?Convert.ToInt32(txtNumCampos.Text):0;
+            for (int i = 0; i < total; i++)
+            {
+
+            borrado:
+                foreach (Control item in PanelCrearTablas.Controls)
+                {
+                    if (item.Name == "txtNomCampo" + i || item.Name == "cbTipoDato" + i || item.Name == "txtTamañoCampo" + i) {
+                        PanelCrearTablas.Controls.Remove(item);
+                        goto borrado;
+                    }
+                }
+
+            }
+
+
+            y = 60;
             txtNomTabla.Text = "";
             txtNumCampos.Text = "";
             txtNomTabla.ReadOnly = false;
@@ -365,7 +382,7 @@ namespace ABD
 
                                 }
                                 else {
-                                    if ((numeros.Match(query.Split(',')[i].Split('.')[0]).Success && numeros.Match(query.Split(',')[i].Split('.')[1]).Success) && query.Split(',')[i].Split('.').Length <= Convert.ToInt32(tipo.Split(',')[1]))
+                                    if ((numeros.Match(query.Split(',')[i].Split('.')[0]).Success && numeros.Match(query.Split(',')[i].Split('.')[1]).Success) && query.Split(',')[i].Split('.')[1].Length <= Convert.ToInt32(tipo.Split(',')[1]))
                                     {
                                         //query.Split(',')[i] += (i == tablaAtributos.RowCount - 1) ? "" : "|";
                                         row += query.Split(',')[i] + ((i == tablaAtributos.RowCount - 1) ? "" : "|");
@@ -471,15 +488,15 @@ namespace ABD
 
                 for (int i = 0; i < tablaAtributos.RowCount; i++)
                 {
-                    //se obtiene el tipo de dato del atributo.
+                        //se obtiene el tipo de dato del atributo.
+                        string nombreCampo = "";
                     string tipo = tablaAtributos.Rows[i].Cells[1].Value.ToString();
                     for (int j = 0; j < query.Split(',').Count(); j++)
                     {
 
 
-                            string nombreCampo = tablaAtributos.Rows[i].Cells[0].Value.ToString();
-
-                            if (query.Split(',')[j].Split('=')[0].ToUpper() == nombreCampo.ToUpper())
+                            nombreCampo = tablaAtributos.Rows[i].Cells[0].Value.ToString();
+                            if (query.Split(',')[j].Split('=')[0].ToUpper().Trim() == nombreCampo.ToUpper().Trim())
                             {
                                 encontrado1 = true; break;
                             }
@@ -494,7 +511,7 @@ namespace ABD
                                 if (tipo.Split(',')[0] == "entero")
                                 {
                                     Regex numeros = new Regex(@"[0-9]+");
-                                    if (numeros.Match(query.Split(',')[v].Split('=')[1]).Success && query.Split(',')[v].Split('=')[1].Length <= Convert.ToInt32(tipo.Split(',')[1]))
+                                    if (numeros.Match(query.Split(',')[v].Split('=')[1]).Success && query.Split(',')[v].Split('=')[1].Length <= Convert.ToInt32(tipo.Split(',')[1]) && query.Split(',')[v].Split('=')[0] == nombreCampo)
                                     {
                                         
                                         row1 += query.Split(',')[v] +(( v == query.Split(',').Count() - 1) ? "" : "|");
@@ -503,7 +520,7 @@ namespace ABD
                                     else
                                     {
                                         error1 = true;
-                                        break;
+                                     
                                     }
                                 }
                                 else if (tipo.Split(',')[0] == "decimal")
@@ -512,12 +529,12 @@ namespace ABD
                                     if (query.Split(',')[v].Split('=')[1].Split('.').Count() != 2)
                                     {
                                         error1 = true;
-                                        break;
+                                  
 
                                     }
                                     else
                                     {
-                                        if ((numeros.Match(query.Split(',')[v].Split('=')[1].Split('.')[0]).Success && numeros.Match(query.Split(',')[v].Split('=')[1].Split('.')[1]).Success) && query.Split(',')[v].Split('=')[1].Split('.').Length <= Convert.ToInt32(tipo.Split(',')[1]))
+                                        if ((numeros.Match(query.Split(',')[v].Split('=')[1].Split('.')[0]).Success && numeros.Match(query.Split(',')[v].Split('=')[1].Split('.')[1]).Success) && query.Split(',')[v].Split('=')[1].Split('.')[1].Length <= Convert.ToInt32(tipo.Split(',')[1]) && query.Split(',')[v].Split('=')[0] == nombreCampo)
                                         {
                                             
                                             row1 += query.Split(',')[v].Split('=')[1] +( (v == query.Split(',').Count() - 1) ? "" : "|");
@@ -526,7 +543,7 @@ namespace ABD
                                         else
                                         {
                                             error1 = true;
-                                            break;
+                                            
                                         }
                                     }
                                 }
@@ -534,7 +551,7 @@ namespace ABD
                                 {
                                     Regex texto = new Regex(@"[A-Za-z0-9-_]+");
 
-                                    if (texto.Match(query.Split(',')[v]).Success && query.Split(',').Length <= Convert.ToInt32(tipo.Split(',')[1]))
+                                    if (texto.Match(query.Split(',')[v]).Success && query.Split(',').Length <= Convert.ToInt32(tipo.Split(',')[1]) && query.Split(',')[v].Split('=')[0] == nombreCampo)
                                     {
                                        
                                         row1 += query.Split(',')[v] +( (v == query.Split(',').Count() - 1) ? "" : "|");
@@ -543,7 +560,7 @@ namespace ABD
                                     else
                                     {
                                         error1 = true;
-                                        break;
+                                   
                                     }
 
                                 }

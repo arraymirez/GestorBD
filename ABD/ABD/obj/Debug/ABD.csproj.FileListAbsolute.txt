@@ -89,4 +89,3 @@ D:\GIT\GESTOR\ABD\ABD\obj\Debug\ABD.csproj.GenerateResource.Cache
 D:\GIT\GESTOR\ABD\ABD\obj\Debug\ABD.exe
 D:\GIT\GESTOR\ABD\ABD\obj\Debug\ABD.pdb
 D:\GIT\GESTOR\ABD\ABD\obj\Debug\ABD.csprojResolveAssemblyReference.cache
-D:\git\Gestor\ABD\ABD\obj\Debug\ABD.csproj.CoreCompileInputs.cache
